@@ -1,0 +1,57 @@
+{
+  "id": "walking",
+  "number": "02",
+  "title": "Walking and Gait",
+  "evidence": "Strong evidence base",
+  "duration": "12–15 minutes",
+  "pathway_note": "Motor cortex (leg area, medial surface) → internal capsule → brainstem → lumbar cord → sciatic nerve → peroneal (foot lift) and tibial (push-off) branches.",
+  "phases": [
+    {
+      "label": "Opening · Breath and Light",
+      "paras": [
+        "Find a comfortable position. Sitting upright, or lying back — whichever allows you to stay alert without holding yourself up. Let your legs rest where they are.",
+        "Take a slow breath in. Let it out. Again. On each out-breath, let a little more of the body's weight drop into whatever is supporting you.",
+        "Bring your attention to the top of your head. There is a soft, warm point there — like the first touch of sun on a cold morning. On each breath in, that warmth enters. Moves down. Through the skull, through the back of the eyes, through the throat and into the chest. No urgency. The warmth finds its own way."
+      ]
+    },
+    {
+      "label": "Phase One · The Ideal Being",
+      "paras": [
+        {
+          "agnostic": "Ahead of you, some distance away, there is a figure. You may see them, or simply sense that they are there — either is right. They are at the far end of a path you know: a hallway, a garden, a street from somewhere in your life. They are moving toward you. Unhurried. Steady. The way walking feels when it doesn't require thought.",
+          "see": "Ahead of you, some distance away, is a figure. They are at the far end of a path you know — a hallway, a garden, a street from somewhere in your life. Take a moment to see the path: the floor or the ground, the walls or the trees, the light. The figure is walking toward you. Unhurried. Steady. The way walking should feel when it doesn't require thought.",
+          "feel": "Ahead of you, some distance away, there is a figure. You may not see them clearly, or at all — that is fine. Simply sense that someone is there, at the far end of a path you know: a hallway, a garden, a street from somewhere in your life. Sense them walking toward you. Unhurried. Steady. The way walking feels when it doesn't require thought."
+        },
+        {
+          "agnostic": "Notice them walking. The rhythm of the arms swinging in opposition to the legs. The heel meeting the ground and the weight rolling forward. The knee bending cleanly in the swing. No compensations. No effortful adjustments. Just walking.",
+          "see": "Watch them. The rhythm of the arms swinging in opposition to the legs. The way the heel meets the ground and the weight rolls forward. The knee bending cleanly in the swing phase. No compensations. No effortful adjustments. Just walking.",
+          "feel": "Sense the walking. The rhythm of the arms swinging against the legs. The heel meeting the ground and the weight rolling forward through the foot. The knee bending cleanly in the swing. No compensations, no effortful adjustments. Just walking."
+        },
+        {
+          "agnostic": "The figure reaches you. Steps into you. Now you are walking — down that same path, in that same direction. The rhythm is yours. The weight shifting from foot to foot. The hip lifting the swinging leg. The heel meeting the ground. The push-off from the calf. Step after step. You are walking — however that comes to you, as picture or as feeling.",
+          "see": "The figure reaches you. Steps into you. Now you are walking — down that same path, in that same direction. The rhythm is yours now. The weight shifting from foot to foot. The hip lifting the swinging leg. The heel meeting the ground. The push-off from the calf. Step after step. You are walking.",
+          "feel": "The figure reaches you. Steps into you. Now you are walking. Forget the picture entirely — stay with the feeling. The weight rolling from one foot to the other. The hip lifting the swinging leg. The heel meeting the ground. The push through the calf. The small sway of the body. Step after step. You are walking. This is all feeling, and feeling is enough."
+        }
+      ]
+    },
+    {
+      "label": "Phase Two · The Anatomical Pathway",
+      "paras": [
+        "Now go inward. To the leg area of the motor cortex — on the inner surface of the brain, opposite your affected side. That area has always known how to walk. The pattern is held there. Stroke interrupts the signal, not the knowledge.",
+        "A signal begins at the motor cortex. It travels downward through the internal capsule, through the brainstem, crossing at the pyramid, entering the lumbar spinal cord. It exits through the front of the cord. Travels out through the sciatic nerve — down through the buttock, the back of the thigh, and there it branches: the peroneal nerve, which lifts the foot, and the tibial nerve, which drives the push-off.",
+        "Now intend to take a step. Send the signal — all the way down. Whatever the outside does or doesn't do, the signal was sent. The pathway was rehearsed. The brain records it. And what the brain rehearses, it reorganises around."
+      ]
+    },
+    {
+      "label": "Closing · Breath and Light",
+      "paras": [
+        "Return to your breath. The practice has been received. Consolidation happens in the quiet that follows — not during the effort. Let the practice settle.",
+        {
+          "agnostic": "When you notice your attention softening later today — that natural drift — return for a breath or two to walking: the weight moving forward, the heel meeting the ground. Before sleep, hold it however it comes to you. Your brain keeps practising while you rest. Take a long out-breath now. Notice the room. Enough.",
+          "see": "When you notice your attention softening later today — that natural drift — return for a breath or two to the image of walking: the weight moving forward, the heel meeting the ground. Before sleep, hold that image. Your brain keeps practising while you rest. Take a long out-breath now. Notice the room. Enough.",
+          "feel": "When you notice your attention softening later today — that natural drift — return for a breath or two to the feeling of walking: the weight moving forward, the heel meeting the ground, the push through the calf. Before sleep, hold that feeling. Your brain keeps practising while you rest. Take a long out-breath now. Notice the room. Enough."
+        }
+      ]
+    }
+  ]
+}

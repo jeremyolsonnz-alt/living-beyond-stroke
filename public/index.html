@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Living Beyond Stroke</title>
+<meta name="description" content="Free educational resources for stroke rehabilitation: motor imagery research and a guided imagery programme grounded in neuroplasticity science.">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --warm-white: #FAF8F4;
+    --charcoal: #2A2820;
+    --bark: #5C4A2A;
+    --gold: #C8963C;
+    --muted: #7A7060;
+    --border: #E0D8C8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--charcoal); font-size: 16px; line-height: 1.75; }
+
+  /* NAV */
+  nav { position: sticky; top: 0; z-index: 100; background: var(--charcoal); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; border-bottom: 2px solid var(--gold); }
+  .nav-brand { font-family: 'Lora', serif; font-size: 1.1rem; color: var(--cream); letter-spacing: 0.03em; text-decoration: none; }
+  .nav-brand span { color: var(--gold); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: #C8C0B0; text-decoration: none; font-size: 0.85rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 0; }
+  .hamburger span { width: 24px; height: 1.5px; background: var(--cream); display: block; }
+  .mobile-menu { display: none; background: var(--charcoal); border-top: 1px solid rgba(255,255,255,0.08); padding: 1rem 1.5rem; flex-direction: column; gap: 0; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { color: #C8C0B0; text-decoration: none; font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); transition: color 0.2s; }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero { min-height: 92vh; background: var(--charcoal); display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 5rem 6rem; gap: 4rem; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(200,150,60,0.04) 40px, rgba(200,150,60,0.04) 41px); }
+  .hero-text { position: relative; z-index: 2; }
+  .hero-eyebrow { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--gold); display: block; }
+  .hero h1 { font-family: 'Lora', serif; font-size: clamp(2.4rem, 4.5vw, 3.8rem); line-height: 1.15; color: var(--cream); font-weight: 400; margin-bottom: 1.5rem; }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-desc { font-size: 1.05rem; color: #A89E8C; line-height: 1.8; max-width: 480px; margin-bottom: 2.5rem; }
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { background: var(--gold); color: var(--charcoal); border: none; padding: 0.85rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.04em; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s; }
+  .btn-primary:hover { background: #D8A84C; transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: var(--cream); border: 1px solid rgba(255,255,255,0.25); padding: 0.85rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.875rem; letter-spacing: 0.04em; cursor: pointer; text-decoration: none; display: inline-block; transition: border-color 0.2s, color 0.2s; }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-pillars { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 1.5rem; }
+  .pillar-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(200,150,60,0.2); padding: 1.5rem 1.75rem; cursor: pointer; transition: background 0.2s, border-color 0.2s; text-decoration: none; display: block; }
+  .pillar-card:hover { background: rgba(200,150,60,0.08); border-color: rgba(200,150,60,0.5); }
+  .pillar-num { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .pillar-title { font-family: 'Lora', serif; font-size: 1.1rem; color: var(--cream); font-weight: 400; margin-bottom: 0.4rem; }
+  .pillar-sub { font-size: 0.82rem; color: #7A7060; line-height: 1.5; }
+
+  /* ABOUT */
+  .about-strip { background: var(--cream); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 5rem 0; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
+  .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start; }
+  .about-aside { font-family: 'Lora', serif; font-size: 1.3rem; font-style: italic; color: var(--bark); line-height: 1.5; }
+  .about-text p { font-size: 0.95rem; color: #4A4438; line-height: 1.9; margin-bottom: 1.1rem; }
+  .about-text p:last-child { margin-bottom: 0; }
+
+  /* STAT ROW */
+  .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 4rem 0 0; }
+  .stat-cell { background: var(--warm-white); padding: 1.75rem 1.5rem; text-align: center; }
+  .stat-val { font-family: 'Lora', serif; font-size: 2.2rem; color: var(--charcoal); font-weight: 400; margin-bottom: 0.3rem; }
+  .stat-label { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.05em; line-height: 1.5; }
+
+  /* PROGRAMME PREVIEW */
+  .programme-section { padding: 6rem 0; background: var(--warm-white); }
+  .section-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
+  .section-label::before { content: ''; width: 24px; height: 1px; background: var(--gold); display: block; }
+  .section-title { font-family: 'Lora', serif; font-size: clamp(1.8rem, 3vw, 2.8rem); line-height: 1.25; font-weight: 400; color: var(--charcoal); margin-bottom: 1.25rem; }
+  .section-intro { font-size: 1.05rem; color: var(--muted); max-width: 620px; line-height: 1.8; margin-bottom: 3rem; }
+
+  .exercise-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .exercise-cell { background: var(--warm-white); padding: 1.75rem 1.5rem; text-decoration: none; transition: background 0.2s; display: block; }
+  .exercise-cell:hover { background: rgba(200,150,60,0.06); }
+  .exercise-num { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+  .exercise-name { font-family: 'Lora', serif; font-size: 1rem; color: var(--charcoal); font-weight: 400; margin-bottom: 0.5rem; line-height: 1.3; }
+  .exercise-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+
+  /* RESEARCH PREVIEW */
+  .research-section { padding: 6rem 0; background: var(--cream); border-top: 1px solid var(--border); }
+  .finding-box { background: var(--charcoal); padding: 2.5rem; margin-top: 3rem; position: relative; overflow: hidden; }
+  .finding-box::before { content: ''; position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(200,150,60,0.04) 40px, rgba(200,150,60,0.04) 41px); }
+  .finding-box-inner { position: relative; z-index: 2; }
+  .finding-box p { font-family: 'Lora', serif; font-size: 1.15rem; color: var(--cream); line-height: 1.65; font-weight: 400; font-style: italic; margin-bottom: 1rem; }
+  .finding-source { font-size: 0.72rem; color: #7A7060; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  /* NEWLY AFFECTED */
+  .entry-strip { padding: 3.5rem 0; background: var(--charcoal); border-top: 1px solid rgba(200,150,60,0.15); }
+  .entry-inner { max-width: 700px; margin: 0 auto; padding: 0 2.5rem; text-align: center; }
+  .entry-inner p { font-family: 'Lora', serif; font-size: 1.15rem; color: var(--cream); font-weight: 400; line-height: 1.6; margin-bottom: 1.25rem; }
+  .entry-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--gold); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid rgba(200,150,60,0.4); padding-bottom: 0.2rem; }
+  .entry-link:hover { border-bottom-color: var(--gold); }
+
+  /* HONEST NOTE */
+  .honest-note { padding: 4rem 0; background: var(--warm-white); border-top: 1px solid var(--border); }
+  .honest-note .container { max-width: 760px; }
+  .honest-note p { font-size: 0.9rem; color: var(--muted); line-height: 1.9; margin-bottom: 1rem; }
+
+  /* FOOTER */
+  footer { background: #1A1810; padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; gap: 1rem; }
+  .footer-brand { font-family: 'Lora', serif; font-size: 0.9rem; color: #5A5040; text-decoration: none; }
+  .footer-copy { font-size: 0.78rem; color: #444030; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding: 3rem 2rem; min-height: auto; }
+    .hero-pillars { margin-top: 1rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .exercise-grid { grid-template-columns: 1fr 1fr; }
+    .stat-row { grid-template-columns: 1fr 1fr; }
+    nav { padding: 0 1.25rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+  }
+  @media (max-width: 600px) {
+    .exercise-grid { grid-template-columns: 1fr; }
+    .stat-row { grid-template-columns: 1fr 1fr; }
+    .hero h1 { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Living Beyond <span>Stroke</span></a>
+  <ul class="nav-links">
+    <li><a href="research_page.html">Research</a></li>
+    <li><a href="guided_imagery_page.html">Guided Imagery</a></li>
+    <li><a href="work_with_jeremy.html">Work with Jeremy</a></li>
+    <li><a href="bibliography.html">Bibliography</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu">
+  <a href="research_page.html">Research</a>
+  <a href="guided_imagery_page.html">Guided Imagery</a>
+  <a href="work_with_jeremy.html">Work with Jeremy</a>
+  <a href="bibliography.html">Bibliography</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Jeremy Olson, MSocSc · Waikato University</div>
+    <h1>Stroke changes the path — not the <em>possibility</em></h1>
+    <p class="hero-desc">A free educational resource for people recovering from stroke. Research-grounded, quietly delivered, and built around what the evidence actually says about how the brain relearns movement.</p>
+    <div class="hero-cta">
+      <a href="guided_imagery_page.html" class="btn-primary">Explore the Guided Imagery Programme</a>
+      <a href="research_page.html" class="btn-ghost">Read the Research</a>
+    </div>
+  </div>
+  <div class="hero-pillars">
+    <a href="research_page.html" class="pillar-card">
+      <div class="pillar-num">Pillar 01 · Neuroplasticity &amp; Motor Imagery</div>
+      <div class="pillar-title">The Research Foundation</div>
+      <div class="pillar-sub">What the science says about mental practice, neuroplasticity, and the brain's capacity to reorganise after stroke. Plain language, cited throughout.</div>
+    </a>
+    <a href="guided_imagery_page.html" class="pillar-card">
+      <div class="pillar-num">Pillar 02 · Mind-Body Practice</div>
+      <div class="pillar-title">Guided Imagery Programme</div>
+      <div class="pillar-sub">Five guided practices targeting arm and hand, walking, balance, speech, and fatigue. Three-phase method. Free to use.</div>
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-strip">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-aside">"What can the mind contribute to the body's work of recovery?"</div>
+      <div class="about-text">
+        <p>I am Jeremy. I hold a Masters of Social Sciences majoring in Psychology from Waikato University, New Zealand. My graduate research — conducted at Deakin University in Melbourne under Professor Robert Cummins — examined what helps people not merely survive serious disability, but flourish. I also hold a Diploma of Solution-Oriented Hypnosis.</p>
+        <p>Over two decades of work in rehabilitation, imagery, and wellbeing, the question I keep returning to is this: what is the mind's role in recovery? Not in any mystical sense, but in the precise neurological sense. The brain is plastic. Mental practice activates real motor networks. These are not beliefs — they are findings, replicated across hundreds of studies.</p>
+        <p>This site brings together the research on guided imagery and stroke rehabilitation, and a free programme built from that evidence. Nothing here is a substitute for clinical care. What it offers is a complement — a practice you can carry into the spaces between therapy sessions, into the morning before you rise, and into the quiet before sleep.</p>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-cell">
+        <div class="stat-val">13M</div>
+        <div class="stat-label">strokes worldwide each year (WHO)</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-val">70%</div>
+        <div class="stat-label">of survivors experience arm weakness</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-val">30+</div>
+        <div class="stat-label">published RCTs on motor imagery after stroke</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-val">Free</div>
+        <div class="stat-label">all five guided practices, always</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDED IMAGERY PREVIEW -->
+<section class="programme-section">
+  <div class="container">
+    <div class="section-label">Pillar Two · The Programme</div>
+    <h2 class="section-title">Five Practices, One Method</h2>
+    <p class="section-intro">Each practice follows the same three-phase structure — Ideal Being, Anatomical Pathway, Breath and Light — adapted to a specific target area. You can begin with whichever practice is most relevant to you.</p>
+
+    <div class="exercise-grid">
+      <a href="exercise_arm_hand.html" class="exercise-cell">
+        <div class="exercise-num">Practice 01</div>
+        <div class="exercise-name">Arm and Hand</div>
+        <div class="exercise-desc">Reaching, grasping, and fine motor movement. The strongest evidence base in the programme.</div>
+      </a>
+      <a href="exercise_walking.html" class="exercise-cell">
+        <div class="exercise-num">Practice 02</div>
+        <div class="exercise-name">Walking and Gait</div>
+        <div class="exercise-desc">The full walking cycle, from weight shift to push-off. Imagery of movement through space.</div>
+      </a>
+      <a href="exercise_balance.html" class="exercise-cell">
+        <div class="exercise-num">Practice 03</div>
+        <div class="exercise-name">Balance and Posture</div>
+        <div class="exercise-desc">Sitting upright, standing steady, trusting the body's capacity to find and hold its centre.</div>
+      </a>
+      <a href="exercise_speech.html" class="exercise-cell">
+        <div class="exercise-num">Practice 04</div>
+        <div class="exercise-name">Speech and Language</div>
+        <div class="exercise-desc">Finding words, forming sounds, and speaking with ease. Framed honestly: weaker evidence than motor exercises.</div>
+      </a>
+      <a href="exercise_fatigue.html" class="exercise-cell">
+        <div class="exercise-num">Practice 05</div>
+        <div class="exercise-name">Fatigue and Rest</div>
+        <div class="exercise-desc">Post-stroke fatigue is real and common. This practice supports genuine rest and energy restoration.</div>
+      </a>
+    </div>
+
+    <div style="margin-top: 2.5rem;">
+      <a href="guided_imagery_page.html" style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.82rem; color:var(--gold); text-decoration:none; letter-spacing:0.06em; text-transform:uppercase; border-bottom: 1px solid rgba(200,150,60,0.4); padding-bottom: 0.2rem;">How the programme works &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH PREVIEW -->
+<section class="research-section">
+  <div class="container">
+    <div class="section-label">Pillar One · The Evidence</div>
+    <h2 class="section-title">Why Mental Practice Works</h2>
+    <p class="section-intro">When you vividly imagine a movement, your brain activates many of the same neural circuits it uses to actually perform that movement. This is not metaphor — it is measurable on fMRI. And it has implications for rehabilitation that are only beginning to be understood.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+      <div style="padding: 1.75rem; background: rgba(200,150,60,0.04); border-left: 3px solid var(--gold);">
+        <div style="font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem;">Neuroplasticity</div>
+        <p style="font-size: 0.92rem; color: #4A4438; line-height: 1.85;">The adult brain is not fixed. After stroke, the cortex reorganises — nearby areas take over functions of damaged tissue. Mental practice drives and accelerates this reorganisation.</p>
+      </div>
+      <div style="padding: 1.75rem; background: rgba(200,150,60,0.04); border-left: 3px solid var(--gold);">
+        <div style="font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem;">Motor Imagery</div>
+        <p style="font-size: 0.92rem; color: #4A4438; line-height: 1.85;">Imagining movement activates the supplementary motor area, premotor cortex, and primary motor cortex — the same network engaged in physical movement. Repeated activation strengthens synaptic connections.</p>
+      </div>
+    </div>
+
+    <div class="finding-box" style="margin-top: 2.5rem;">
+      <div class="finding-box-inner">
+        <p>"Mental practice added to physical practice improves arm and hand function after stroke more than physical practice alone."</p>
+        <span class="finding-source">Braun et al. (2006) · Systematic Review · Archives of Physical Medicine and Rehabilitation</span>
+      </div>
+    </div>
+
+    <div style="margin-top: 2.5rem;">
+      <a href="research_page.html" style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.82rem; color:var(--gold); text-decoration:none; letter-spacing:0.06em; text-transform:uppercase; border-bottom: 1px solid rgba(200,150,60,0.4); padding-bottom: 0.2rem;">Read the full research overview &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWLY AFFECTED -->
+<section class="entry-strip">
+  <div class="entry-inner">
+    <p>If you or someone you love has recently had a stroke, you don't need to take in everything on this site today.</p>
+    <a href="contact.html" class="entry-link">Reach out directly &rarr;</a>
+  </div>
+</section>
+
+<!-- HONEST NOTE -->
+<section class="honest-note">
+  <div class="container">
+    <div class="section-label">An Honest Note</div>
+    <p>Nothing on this site is a treatment, a cure, or a substitute for rehabilitation medicine. The guided imagery programme is a self-directed practice complement, offered freely on the basis of published motor imagery research. The three-phase integration used in these practices — while drawing on peer-reviewed science — has not been clinically tested in this exact form. Some people will find it helpful. Others will not. That is the honest position.</p>
+    <p>If you are currently under the care of a physiotherapist, occupational therapist, or speech-language pathologist, these practices are designed to work alongside that care — not to replace it. You may wish to share them with your therapist.</p>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="footer-brand">Living Beyond Stroke</a>
+  <div class="footer-copy">© 2025 Living Beyond Stroke · <a href="contact.html" style="color:#5A5040;text-decoration:none;border-bottom:1px solid rgba(200,150,60,0.15);">Contact</a></div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.pillar-card, .exercise-cell, .stat-cell').forEach(el => {
+  el.style.cssText += 'opacity:0;transform:translateY(18px);transition:opacity 0.5s ease, transform 0.5s ease;';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>

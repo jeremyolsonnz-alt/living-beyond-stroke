@@ -1,0 +1,30 @@
+# Netlify configuration for livingbeyondstroke.com
+# Static site — no build step. Only the public/ folder is served,
+# which keeps the build/ toolkit (source scripts, generator, PDFs' sources)
+# out of the published site automatically.
+
+[build]
+  publish = "public"
+  # No build command: the site is plain static HTML.
+
+# Sensible security headers for a static informational site.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Long cache for the printable PDFs (they rarely change).
+[[headers]]
+  for = "/downloads/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# Redirect the bare www to the apex (adjust if you prefer www as canonical).
+[[redirects]]
+  from = "https://www.livingbeyondstroke.com/*"
+  to = "https://livingbeyondstroke.com/:splat"
+  status = 301
+  force = true
