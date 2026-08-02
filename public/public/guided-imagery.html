@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guided Imagery Programme · Living Beyond Stroke</title>
+<meta name="description" content="Five guided imagery practices for stroke recovery: arm and hand, walking, balance, speech, and fatigue. A simple three-step method. Free.">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#F5F0E8;--warm-white:#FAF8F4;--charcoal:#2A2820;--bark:#5C4A2A;--gold:#C8963C;--muted:#7A7060;--border:#E0D8C8;}
+  *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--charcoal);font-size:16px;line-height:1.75;}
+  nav{position:sticky;top:0;z-index:100;background:var(--charcoal);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;border-bottom:2px solid var(--gold);}
+  .nav-brand{font-family:'Lora',serif;font-size:1.1rem;color:var(--cream);letter-spacing:0.03em;text-decoration:none;}
+  .nav-brand span{color:var(--gold);}
+  .nav-links{display:flex;gap:2rem;list-style:none;}
+  .nav-links a{color:#C8C0B0;text-decoration:none;font-size:0.85rem;font-weight:400;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s;}
+  .nav-links a:hover{color:var(--gold);}
+  .nav-links a.active{color:var(--gold);}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;}
+  .hamburger span{width:24px;height:1.5px;background:var(--cream);display:block;}
+  .mobile-menu{display:none;background:var(--charcoal);border-top:1px solid rgba(255,255,255,0.08);padding:1rem 1.5rem;flex-direction:column;gap:0;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{color:#C8C0B0;text-decoration:none;font-size:0.9rem;letter-spacing:0.06em;text-transform:uppercase;padding:0.85rem 0;border-bottom:1px solid rgba(255,255,255,0.06);transition:color 0.2s;}
+  .mobile-menu a:last-child{border-bottom:none;}
+  .mobile-menu a:hover,.mobile-menu a.active{color:var(--gold);}
+
+  .page-hero{background:var(--charcoal);padding:4.5rem 0 3.5rem;border-bottom:1px solid rgba(200,150,60,0.2);}
+  .hero-inner{max-width:860px;margin:0 auto;padding:0 2.5rem;}
+  .article-eyebrow{font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.6rem;}
+  .article-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold);display:block;}
+  .article-h1{font-family:'Lora',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.2;color:var(--cream);font-weight:400;margin-bottom:1rem;}
+  .article-standfirst{font-size:1.05rem;color:#8A8070;line-height:1.8;max-width:680px;}
+
+  .article-body{max-width:860px;margin:0 auto;padding:4rem 2.5rem 5rem;}
+  .section-label{font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;display:block;}
+  h2.section-title{font-family:'Lora',serif;font-size:clamp(1.5rem,2.5vw,2rem);font-weight:400;color:var(--charcoal);margin-bottom:1.1rem;}
+  p.body-text{font-size:0.97rem;color:#4A4438;line-height:1.9;margin-bottom:1rem;}
+
+  /* PHASE CARDS */
+  .phase-grid{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);margin:2rem 0;}
+  .phase-card{background:var(--warm-white);padding:1.75rem 2rem;display:grid;grid-template-columns:2.5rem 1fr;gap:1.5rem;align-items:start;}
+  .phase-num{font-family:'Lora',serif;font-size:1.8rem;color:rgba(200,150,60,0.3);font-weight:400;line-height:1;}
+  .phase-eyebrow{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
+  .phase-name{font-family:'Lora',serif;font-size:1.1rem;color:var(--charcoal);font-weight:400;margin-bottom:0.5rem;}
+  .phase-desc{font-size:0.9rem;color:#5A5040;line-height:1.8;}
+
+  /* PRACTICE CARDS */
+  .practice-grid{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);margin:2rem 0;}
+  .practice-card{background:var(--warm-white);padding:1.5rem 1.75rem;text-decoration:none;display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;transition:background 0.2s;}
+  .practice-card:hover{background:rgba(200,150,60,0.06);}
+  .practice-card-num{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem;}
+  .practice-card-name{font-family:'Lora',serif;font-size:1.05rem;color:var(--charcoal);font-weight:400;margin-bottom:0.3rem;}
+  .practice-card-desc{font-size:0.83rem;color:var(--muted);line-height:1.6;}
+  .evidence-badge{font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.3rem 0.65rem;border:1px solid;white-space:nowrap;}
+  .evidence-strong{color:#4A7A4A;border-color:rgba(74,122,74,0.4);background:rgba(74,122,74,0.06);}
+  .evidence-moderate{color:var(--bark);border-color:rgba(92,74,42,0.4);background:rgba(92,74,42,0.06);}
+  .evidence-emerging{color:var(--muted);border-color:rgba(122,112,96,0.35);background:rgba(122,112,96,0.04);}
+
+  /* CALLOUT */
+  .callout{background:var(--cream);border:1px solid var(--border);padding:1.75rem 2rem;margin:2rem 0;}
+  .callout-label{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
+  .callout p{font-size:0.92rem;color:#4A4438;line-height:1.85;margin-bottom:0.75rem;}
+  .callout p:last-child{margin-bottom:0;}
+
+  /* WINDOWS */
+  .window-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin:2rem 0;}
+  .window-cell{background:var(--warm-white);padding:1.75rem 1.5rem;}
+  .window-label{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+  .window-title{font-family:'Lora',serif;font-size:1rem;color:var(--charcoal);font-weight:400;margin-bottom:0.6rem;}
+  .window-desc{font-size:0.85rem;color:#5A5040;line-height:1.75;}
+
+  .divider{border:none;border-top:1px solid var(--border);margin:3.5rem 0;}
+
+  footer{background:#1A1810;padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.06);flex-wrap:wrap;gap:1rem;}
+  .footer-brand{font-family:'Lora',serif;font-size:0.9rem;color:#5A5040;text-decoration:none;}
+  .footer-copy{font-size:0.75rem;color:#3A3020;}
+
+  @media(max-width:900px){nav{padding:0 1.25rem;}.nav-links{display:none;}.hamburger{display:flex;}.window-grid{grid-template-columns:1fr;}.article-body{padding:2.5rem 1.5rem 4rem;}.hero-inner{padding:0 1.5rem;}.phase-card{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Living Beyond <span>Stroke</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="guided-imagery.html" class="active">Guided Imagery</a></li>
+    <li><a href="work-with-jeremy.html">Work with Jeremy</a></li>
+    <li><a href="bibliography.html">Bibliography</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="research.html">Research</a>
+  <a href="guided-imagery.html" class="active">Guided Imagery</a>
+  <a href="work-with-jeremy.html">Work with Jeremy</a>
+  <a href="bibliography.html">Bibliography</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="hero-inner">
+    <div class="article-eyebrow">Pillar Two · Mind-Body Practice</div>
+    <h1 class="article-h1">The Guided Imagery Programme</h1>
+    <p class="article-standfirst">Five practices. One method. It's built on research showing that imagining a movement switches on many of the same brain networks as actually doing it — which may help your brain rebuild after a stroke.</p>
+  </div>
+</div>
+
+<div class="article-body">
+
+  <!-- INTRODUCTION -->
+  <p class="body-text">Guided imagery is a set of mental practices you do alongside your normal stroke rehab. In each one, you imagine a movement in detail — from the inside, with all the feeling of really doing it — and follow the path the signal takes from your brain to your body. Here's why that helps: when you imagine a movement clearly, your brain switches on many of the same networks it uses to actually make that movement. Doing this again and again seems to help the brain rebuild the connections a stroke damaged.</p>
+  <p class="body-text">The practices are free. They are not a treatment, and they don't replace physiotherapy, occupational therapy, or speech therapy. They sit alongside those — something you can do on your own, in the gaps between appointments, or during the long stretches when you don't have hands-on rehab.</p>
+
+  <hr class="divider">
+
+  <!-- THE THREE PHASES -->
+  <div class="section-label">How the Method Works</div>
+  <h2 class="section-title">The Four Steps</h2>
+  <p class="body-text">Every practice follows the same four steps, in the same order. The order matters — each step sets up the one after it.</p>
+
+  <div class="phase-grid">
+    <div class="phase-card">
+      <div class="phase-num">○</div>
+      <div>
+        <div class="phase-eyebrow">Opening · Breath and Light</div>
+        <div class="phase-name">Settling down</div>
+        <p class="phase-desc">Every practice starts by settling you. You bring your attention to your body, slow your breathing, and imagine a warm point of light at the top of your head. This calms your nervous system and gets you ready to focus. A calmer brain rewires more easily. Takes two to three minutes.</p>
+      </div>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">I</div>
+      <div>
+        <div class="phase-eyebrow">Step One · The Ideal Being</div>
+        <div class="phase-name">Watch, then become</div>
+        <p class="phase-desc">A figure appears — or you simply sense one — moving easily, doing the movement you're working on. First you watch them, and notice how smooth and easy it looks. Then the figure steps into you, and you become them. What you were watching, you now feel from the inside. Watching a movement wakes up the same brain cells as doing it; then stepping in switches you into feeling it yourself. Three to four minutes.</p>
+      </div>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">II</div>
+      <div>
+        <div class="phase-eyebrow">Step Two · The Body Pathway</div>
+        <div class="phase-name">Follow the signal</div>
+        <p class="phase-desc">Now you go inward. You follow the signal from where it starts — the movement part of your brain — down through the brain, into the spinal cord, and out along the nerves to the muscle you're working on. Each practice follows a different path. As you go, you gently intend to make the movement — not forcing it, just intending — while you picture or feel the whole path. This is the step that targets the exact route the stroke damaged. Three to four minutes.</p>
+      </div>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">◉</div>
+      <div>
+        <div class="phase-eyebrow">Closing · Breath and Light</div>
+        <div class="phase-name">Settle and rest</div>
+        <p class="phase-desc">You come back to your breath and let the images settle. Then you rest for a moment. Your brain locks in what it just practised during this quiet bit — not during the effort, but in the calm right after. Then you bring yourself gently back to the room. Two minutes.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">Why this order?</div>
+    <p>Each step sets up the next. The opening gets your brain ready. Watching the figure wakes up your movement system before you step in and feel it. Following the pathway aims all of that at the exact route the stroke damaged. The rest at the end locks it in. Take out any step and it works less well. Do them in order and each one boosts the next.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- BEFORE YOU BEGIN -->
+  <a href="imagery-check.html" style="display:block;text-decoration:none;background:var(--charcoal);border-left:3px solid var(--gold);padding:1.75rem 2rem;margin:2.5rem 0;">
+    <div style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">Before You Begin · Two Minutes</div>
+    <div style="font-family:'Lora',serif;font-size:1.25rem;color:var(--cream);font-weight:400;margin-bottom:0.5rem;">How do you imagine?</div>
+    <p style="font-size:0.92rem;color:#B8B0A0;line-height:1.75;margin:0;">People imagine in very different ways — some see pictures, some feel movement without seeing anything, and some see almost nothing. None of that is a problem, but it changes how you should use these practices. This quick, private check shows you your own way in. <span style="color:var(--gold);">Take the check →</span></p>
+  </a>
+
+  <!-- THE FIVE PRACTICES -->
+  <div class="section-label">The Practices</div>
+  <h2 class="section-title">Five Areas, Five Practices</h2>
+  <p class="body-text">Pick the practice that fits where you are right now. You can do more than one, but it's usually best to get comfortable with a single practice for a week or two before adding another. They're separate — you don't have to do them in order.</p>
+
+  <div class="practice-grid">
+    <a href="exercise-arm-hand.html" class="practice-card">
+      <div>
+        <div class="practice-card-num">Practice 01</div>
+        <div class="practice-card-name">Arm and Hand</div>
+        <div class="practice-card-desc">Reaching, gripping, and fine hand movements. Follows the path from your brain down to your hand muscles. This one has the strongest research behind it.</div>
+      </div>
+      <span class="evidence-badge evidence-strong">Strong evidence</span>
+    </a>
+    <a href="exercise-walking.html" class="practice-card">
+      <div>
+        <div class="practice-card-num">Practice 02</div>
+        <div class="practice-card-name">Walking and Gait</div>
+        <div class="practice-card-desc">The whole walking cycle — shifting your weight, lifting the leg, the heel landing, pushing off. You imagine moving through a familiar place with ease. Several strong studies back this up.</div>
+      </div>
+      <span class="evidence-badge evidence-strong">Strong evidence</span>
+    </a>
+    <a href="exercise-balance.html" class="practice-card">
+      <div>
+        <div class="practice-card-num">Practice 03</div>
+        <div class="practice-card-name">Balance and Posture</div>
+        <div class="practice-card-desc">Sitting tall, standing steady, finding your centre and trusting it. Uses the balance systems in your inner ear and brain. Decent evidence for this one, though less than walking.</div>
+      </div>
+      <span class="evidence-badge evidence-moderate">Moderate evidence</span>
+    </a>
+    <a href="exercise-speech.html" class="practice-card">
+      <div>
+        <div class="practice-card-num">Practice 04</div>
+        <div class="practice-card-name">Speech and Language</div>
+        <div class="practice-card-desc">Finding words, making sounds, speaking freely. Follows the path from the speech part of your brain to the muscles that shape sound. Honest note: the evidence here is still early. Use it alongside speech therapy, not instead of it.</div>
+      </div>
+      <span class="evidence-badge evidence-emerging">Emerging evidence</span>
+    </a>
+    <a href="exercise-fatigue.html" class="practice-card">
+      <div>
+        <div class="practice-card-num">Practice 05</div>
+        <div class="practice-card-name">Fatigue and Rest</div>
+        <div class="practice-card-desc">Stroke fatigue is a real, physical thing — not laziness, and not in your head. This practice helps you rest properly and get your energy back. It's built on research into the body's natural rest cycles.</div>
+      </div>
+      <span class="evidence-badge evidence-moderate">Moderate evidence</span>
+    </a>
+  </div>
+
+  <hr class="divider">
+
+  <!-- WHEN TO PRACTISE -->
+  <div class="section-label">When to Practise</div>
+  <h2 class="section-title">How Often — and the Best Times</h2>
+  <p class="body-text">Once a day is a good, realistic start. Three to five times a week is the amount linked to real results in the studies. But the full session isn't the only time you can practise. There are three natural moments in every day when your brain is especially open to it — and even a few breaths of imagining during those moments add up, with no extra session needed.</p>
+
+  <div class="window-grid">
+    <div class="window-cell">
+      <div class="window-label">Morning</div>
+      <div class="window-title">The first minute after you wake</div>
+      <p class="window-desc">Before you grab your phone, fully open your eyes, or roll over — your nervous system is at its softest. Muscle stiffness is usually at its lowest, and your busy thinking mind hasn't kicked in yet. Whatever you imagine in those first sixty seconds sinks in deep.</p>
+    </div>
+    <div class="window-cell">
+      <div class="window-label">Evening</div>
+      <div class="window-title">The minutes before sleep</div>
+      <p class="window-desc">As you're drifting off, the line between deliberate thought and free imagining blurs. Whatever your mind is holding in these minutes tends to get rehearsed while you sleep. Your brain keeps working when you're not — and imagining before sleep gives it something to work on.</p>
+    </div>
+    <div class="window-cell">
+      <div class="window-label">Daytime</div>
+      <div class="window-title">The 90-minute dip</div>
+      <p class="window-desc">Every ninety minutes or so, your nervous system dips into a short rest phase. You might notice it as a wish to pause, a drop in focus, a pull to close your eyes. Most people push through it — but it's actually a moment when your brain is extra open, so use it.</p>
+    </div>
+  </div>
+
+  <p class="body-text">These windows don't need a full session. Just two or three breaths returning to the main image from your practice — the feeling of your hand closing, the weight moving through your leg, words forming — is doing real work in your brain. The longer sessions teach you the image. The windows are when you put it to use.</p>
+
+  <div style="margin:2.5rem 0; padding:1.75rem 2rem; border-left:3px solid var(--gold); background:rgba(200,150,60,0.04);">
+    <p style="font-size:0.97rem;color:#4A4438;line-height:1.85;margin:0;"><em>If you've been practising the arm</em>, come back to the warmth in your palm and your fingers curling for two or three breaths. <em>If you've been practising walking</em>, come back to the feeling of your heel landing and your weight rolling forward. <em>If you've been practising balance</em>, come back to the feeling of being centred, upright, and easy. These small moments add up.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- STARTING -->
+  <div class="section-label">Getting Started</div>
+  <h2 class="section-title">How to Begin</h2>
+  <p class="body-text">Pick one practice. Play the audio if that helps — or read the script to yourself, or have someone read it to you. Get into a comfortable, supported position. Sitting upright usually works better than lying down, which can make you fall asleep instead of focus — but either is fine. Most people close their eyes; softly gazing at a point in the distance also works.</p>
+  <p class="body-text">The first session will feel strange. That's completely normal. Your brain gets better at using guided imagery the more you do it, like anything else. Sessions two to five usually feel more useful than the first. And if it feels like nothing's happening — that's common too. The <a href="research.html#dose" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(200,150,60,0.3);">dose section of the research page</a> explains why sticking with it matters more than what you feel on day one.</p>
+  <p class="body-text">If you're in active rehab right now, tell your therapist you're doing this. A lot of physios and OTs know about motor imagery and can show you how to pair it with your exercises to get the most out of both.</p>
+
+  <div class="callout">
+    <div class="callout-label">A note on the audio</div>
+    <p>The audio uses a voice clone made from recordings of the programme author's own voice. The words and scripts are all original. If a computer-made voice pulls you out of the practice rather than helping, every script is written out on its exercise page. Plenty of people find that reading it in their own head works just as well — or better.</p>
+  </div>
+
+  <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;">
+    <a href="exercise-arm-hand.html" style="display:inline-block;font-size:0.85rem;color:var(--gold);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;padding:0.65rem 1.5rem;border:1px solid rgba(200,150,60,0.3);transition:background 0.2s;" onmouseover="this.style.background='rgba(200,150,60,0.06)'" onmouseout="this.style.background='transparent'">Begin with Practice 01: Arm and Hand &rarr;</a>
+  </div>
+
+</div>
+
+<footer>
+  <a href="index.html" class="footer-brand">Living Beyond Stroke</a>
+  <div class="footer-copy">© 2025 Living Beyond Stroke</div>
+</footer>
+
+</body>
+</html>
