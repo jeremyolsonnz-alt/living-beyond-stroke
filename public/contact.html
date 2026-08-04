@@ -13,7 +13,9 @@
 <style>
   :root{--cream:#F5F0E8;--warm-white:#FAF8F4;--charcoal:#2A2820;--bark:#5C4A2A;--gold:#C8963C;--muted:#7A7060;--border:#E0D8C8;}
   *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
-  body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--charcoal);font-size:16px;line-height:1.75;}
+  body{font-family:'DM Sans',sans-serif;background:var(--charcoal);color:var(--cream);font-size:16px;line-height:1.75;}
+
+  /* NAV */
   nav{position:sticky;top:0;z-index:100;background:var(--charcoal);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;border-bottom:2px solid var(--gold);}
   .nav-brand{font-family:'Lora',serif;font-size:1.1rem;color:var(--cream);letter-spacing:0.03em;text-decoration:none;}
   .nav-brand span{color:var(--gold);}
@@ -27,34 +29,57 @@
   .mobile-menu a{color:#C8C0B0;text-decoration:none;font-size:0.9rem;letter-spacing:0.06em;text-transform:uppercase;padding:0.85rem 0;border-bottom:1px solid rgba(255,255,255,0.06);transition:color 0.2s;}
   .mobile-menu a:last-child{border-bottom:none;}
   .mobile-menu a:hover{color:var(--gold);}
-  .page-hero{background:var(--charcoal);padding:4rem 0 3rem;border-bottom:1px solid rgba(200,150,60,0.2);}
-  .hero-inner{max-width:860px;margin:0 auto;padding:0 2.5rem;}
-  .article-h1{font-family:'Lora',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.2;color:var(--cream);font-weight:400;margin-bottom:1rem;}
-  .article-standfirst{font-size:1.05rem;color:#8A8070;line-height:1.8;max-width:680px;}
-  .article-body{max-width:860px;margin:0 auto;padding:3.5rem 2.5rem 5rem;}
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
-  h2.section-head{font-family:'Lora',serif;font-size:1.3rem;font-weight:400;color:var(--charcoal);margin:0 0 1.25rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border);}
-  p.body-text{font-size:0.97rem;color:#4A4438;line-height:1.9;margin-bottom:1rem;}
-  .form-group{margin-bottom:1.5rem;}
-  .form-label{display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
-  .form-input,.form-textarea,.form-select{width:100%;padding:0.75rem 1rem;border:1px solid var(--border);background:var(--cream);color:var(--charcoal);font-family:'DM Sans',sans-serif;font-size:0.95rem;outline:none;transition:border-color 0.2s;-webkit-appearance:none;}
-  .form-input:focus,.form-textarea:focus,.form-select:focus{border-color:var(--gold);}
-  .form-textarea{min-height:150px;resize:vertical;line-height:1.7;}
-  .form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A7060' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;}
-  .submit-btn{background:var(--gold);color:var(--charcoal);border:none;padding:0.85rem 2rem;font-family:'DM Sans',sans-serif;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;width:100%;transition:background 0.2s;}
-  .submit-btn:hover{background:#B8863C;}
-  .contact-detail{display:flex;flex-direction:column;gap:0.3rem;margin-bottom:2rem;}
-  .contact-detail-label{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
-  .contact-detail-value{font-size:0.95rem;color:var(--charcoal);}
-  .contact-detail-value a{color:var(--gold);text-decoration:none;}
-  .contact-detail-value a:hover{text-decoration:underline;}
+
+  /* CONTACT */
+  .contact-section{background:var(--charcoal);padding:6rem 0;}
+  .container{max-width:1100px;margin:0 auto;padding:0 2.5rem;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+  .section-label{font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.6rem;}
+  .section-label::before{content:'';width:24px;height:1px;background:var(--gold);display:block;}
+  .section-title{font-family:'Lora',serif;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.2;font-weight:400;color:var(--cream);margin-bottom:1rem;}
+  .section-intro{font-size:0.97rem;color:#7A7060;line-height:1.85;margin-bottom:2rem;}
+  .aside-label{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#5A5040;margin-bottom:0.5rem;}
+  .tag-row{display:flex;flex-wrap:wrap;gap:0.5rem;}
+  .tag{font-size:0.78rem;padding:0.3rem 0.75rem;border:1px solid rgba(200,150,60,0.3);color:#A89E8C;}
+  .pdf-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.85rem;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(200,150,60,0.4);padding-bottom:0.2rem;}
+  .aside-note{font-size:0.85rem;color:#7A7060;line-height:1.75;}
+  .contact-form{display:flex;flex-direction:column;gap:1rem;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+  .form-group{display:flex;flex-direction:column;gap:0.4rem;}
+  .form-group label{font-size:0.75rem;letter-spacing:0.06em;text-transform:uppercase;color:#7A7060;}
+  .form-group input,
+  .form-group select,
+  .form-group textarea{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:var(--cream);padding:0.75rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;transition:border-color 0.2s;resize:vertical;}
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus{border-color:var(--gold);}
+  .form-group select{appearance:none;cursor:pointer;}
+  .form-group textarea{min-height:120px;}
+  .btn-primary{display:inline-block;background:var(--gold);color:var(--charcoal);padding:0.75rem 1.75rem;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background 0.2s;}
+  .btn-primary:hover{background:#D8A84C;}
+
+  /* FOOTER */
   footer{background:#1A1810;padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.06);flex-wrap:wrap;gap:1rem;}
   .footer-brand{font-family:'Lora',serif;font-size:0.9rem;color:#5A5040;text-decoration:none;}
-  .footer-copy{font-size:0.75rem;color:#3A3020;}
-  @media(max-width:900px){nav{padding:0 1.25rem;}.nav-links{display:none;}.hamburger{display:flex;}.article-body{padding:2.5rem 1.5rem 4rem;}.hero-inner{padding:0 1.5rem;}.contact-grid{grid-template-columns:1fr;gap:3rem;}}
+  .footer-copy{font-size:0.78rem;color:#444030;}
+
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important;}}
+
+  /* RESPONSIVE */
+  @media(max-width:900px){
+    nav{padding:0 1.25rem;}
+    .nav-links{display:none;}
+    .hamburger{display:flex;}
+    .contact-section{padding:3.5rem 0;}
+    .container{padding:0 1.5rem;}
+    .contact-grid{grid-template-columns:1fr;gap:3rem;}
+    .form-row{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
+
 <nav>
   <a href="index.html" class="nav-brand">Living Beyond <span>Stroke</span></a>
   <ul class="nav-links">
@@ -65,9 +90,11 @@
     <li><a href="bibliography.html">Bibliography</a></li>
     <li><a href="contact.html" aria-current="page">Contact</a></li>
   </ul>
-  <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="hamburger" onclick="toggleMenu(this)" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-<div class="mobile-menu">
+<div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a>
   <a href="research.html">Research</a>
   <a href="guided-imagery.html">Guided Imagery</a>
@@ -76,79 +103,115 @@
   <a href="contact.html">Contact</a>
 </div>
 
-<div class="page-hero">
-  <div class="hero-inner">
-    <h1 class="article-h1">Contact</h1>
-    <p class="article-standfirst">A question about the programme. An error you have spotted. Something you would like to share about your experience. All of these are welcome.</p>
-  </div>
-</div>
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
 
-<div class="article-body">
-  <div class="contact-grid">
+      <div>
+        <div class="section-label">Get in Touch</div>
+        <h1 class="section-title">Reach out about any part of this site</h1>
+        <p class="section-intro">Whether you have had a stroke, work in rehabilitation, are a researcher, or just want to know more — I would be glad to hear from you.</p>
 
-    <div>
-      <h2 class="section-head">Send a Message</h2>
-      <form name="contact" data-netlify="true" netlify-honeypot="bot-field" action="/index.html" method="POST">
+        <div style="margin-top:2rem;display:flex;flex-direction:column;gap:1.25rem;">
+          <div>
+            <div class="aside-label">Suitable for</div>
+            <div class="tag-row">
+              <span class="tag">People after stroke</span>
+              <span class="tag">Clinicians</span>
+              <span class="tag">Researchers</span>
+              <span class="tag">Family members</span>
+              <span class="tag">Media</span>
+            </div>
+          </div>
+
+          <div style="margin-top:1.5rem;">
+            <div class="aside-label">For Clinicians &amp; Rehabilitation Teams</div>
+            <a href="clinician_overview.pdf" target="_blank" class="pdf-link">Download the one-page overview (PDF) &darr;</a>
+          </div>
+
+          <div style="margin-top:1.5rem;">
+            <div class="aside-label">Medical questions</div>
+            <p class="aside-note">Jeremy is an educator and researcher, not a clinician. For medical advice, please contact your clinical team.</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
         <input type="hidden" name="form-name" value="contact">
         <p style="display:none;"><label>Don't fill this in: <input name="bot-field"></label></p>
 
-        <div class="form-group">
-          <label class="form-label" for="name">Your name</label>
-          <input class="form-input" type="text" id="name" name="name" required autocomplete="name">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="first-name">First name</label>
+            <input type="text" id="first-name" name="first-name" placeholder="Your first name" autocomplete="given-name" required>
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last name</label>
+            <input type="text" id="last-name" name="last-name" placeholder="Your last name" autocomplete="family-name">
+          </div>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="email">Email address</label>
-          <input class="form-input" type="email" id="email" name="email" required autocomplete="email">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" required>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="reason">Reason for contact</label>
-          <select class="form-select" id="reason" name="reason">
-            <option value="">Select one…</option>
-            <option value="question">Question about the programme</option>
-            <option value="experience">Sharing my experience</option>
-            <option value="clinician">Clinician or researcher enquiry</option>
-            <option value="error">Spotted an error or broken link</option>
-            <option value="other">Something else</option>
+          <label for="interest">I am interested in</label>
+          <select id="interest" name="interest">
+            <option value="">Select an area...</option>
+            <option>Quality of Life Research</option>
+            <option>Guided Imagery Programme</option>
+            <option>Working with Jeremy</option>
+            <option>All areas of the site</option>
+            <option>Speaking / media enquiry</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="message">Message</label>
-          <textarea class="form-textarea" id="message" name="message" required placeholder="Write as much or as little as you like."></textarea>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell me a little about yourself and what you're looking for..."></textarea>
         </div>
 
-        <button type="submit" class="submit-btn">Send Message</button>
+        <button type="submit" class="btn-primary" style="align-self:flex-start;">Send Message</button>
+        <div id="form-confirm" role="status" style="display:none;font-size:0.85rem;color:var(--gold);margin-top:0.5rem;">Thank you — I'll be in touch soon.</div>
+        <div id="form-error" role="alert" style="display:none;font-size:0.85rem;color:#C97064;margin-top:0.5rem;">Something went wrong sending your message — please email jeremy@livingbeyondstroke.com directly.</div>
       </form>
-    </div>
-
-    <div>
-      <h2 class="section-head">Direct Contact</h2>
-
-      <div class="contact-detail">
-        <span class="contact-detail-label">Email</span>
-        <span class="contact-detail-value"><a href="mailto:jeremy@livingbeyondstroke.com">jeremy@livingbeyondstroke.com</a></span>
-      </div>
-
-      <div class="contact-detail">
-        <span class="contact-detail-label">Response time</span>
-        <span class="contact-detail-value">Usually within a few days. This is a one-person project.</span>
-      </div>
-
-      <div class="contact-detail">
-        <span class="contact-detail-label">Medical questions</span>
-        <span class="contact-detail-value">Jeremy is an educator and researcher, not a clinician. For medical advice, please contact your clinical team.</span>
-      </div>
 
     </div>
-
   </div>
-</div>
+</section>
 
 <footer>
   <a href="index.html" class="footer-brand">Living Beyond <span style="color:var(--gold)">Stroke</span></a>
   <div class="footer-copy">© 2025–2026 Living Beyond Stroke · <a href="terms-stroke.html" style="color:#5A5040;text-decoration:none;border-bottom:1px solid rgba(200,150,60,0.15);">Terms of Use</a></div>
 </footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  fetch('/', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: new URLSearchParams(data).toString()
+  })
+  .then(() => {
+    document.getElementById('form-confirm').style.display = 'block';
+    document.getElementById('form-error').style.display = 'none';
+    form.reset();
+  })
+  .catch(() => {
+    document.getElementById('form-error').style.display = 'block';
+    document.getElementById('form-confirm').style.display = 'none';
+  });
+}
+function toggleMenu(btn) {
+  const menu = document.getElementById('mobileMenu');
+  const open = menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+</script>
 </body>
 </html>
