@@ -3,15 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Work with Jeremy · Living Beyond Stroke</title>
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<meta name="description" content="Arrange a one-to-one session with Jeremy Olson, developer of the Guided Imagery Programme. Personal support after stroke, worldwide via Zoom, offered on koha.">
-<!-- JEREMY: update og:image and og:url once the Stroke site's domain is settled -->
-<meta property="og:title" content="Work with Jeremy · Living Beyond Stroke">
-<meta property="og:description" content="One-to-one sessions with Jeremy Olson. Personal support after stroke, worldwide via Zoom, offered on koha.">
+<title>Work with Jeremy · Living Beyond SCI</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="Arrange a one-to-one session with Jeremy Olson, developer of the Guided Imagery Programme. Personal support after spinal cord injury, worldwide via Zoom, offered on koha.">
+<!-- JEREMY: add og:image once you've chosen the image for this page -->
+<meta property="og:title" content="Work with Jeremy · Living Beyond SCI">
+<meta property="og:description" content="One-to-one sessions with Jeremy Olson. Personal support after spinal cord injury, worldwide via Zoom, offered on koha.">
+<meta property="og:url" content="https://livingbeyondsci.com/work-with-jeremy.html">
 <meta property="og:type" content="website">
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -47,6 +45,9 @@
   .detail-row:last-child{border-bottom:none;}
   .detail-key{flex:0 0 130px;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);padding-top:0.15rem;}
   .detail-val{font-size:1rem;color:#4A4438;line-height:1.7;}
+  .return-link-block{margin-top:1rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;}
+  .return-link{display:inline-block;font-size:0.85rem;color:var(--gold);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;padding:0.65rem 1.5rem;border:1px solid rgba(200,150,60,0.3);transition:background 0.2s,border-color 0.2s;}
+  .return-link:hover{background:rgba(200,150,60,0.06);border-color:var(--gold);}
   footer{background:#1A1810;padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.06);flex-wrap:wrap;gap:1rem;}
   .footer-brand{font-family:'Lora',serif;font-size:0.9rem;color:#5A5040;text-decoration:none;}
   .footer-brand span{color:var(--gold);}
@@ -57,14 +58,17 @@
 </head>
 <body>
 
+<!-- JEREMY: check these nav filenames against the live SCI site before deploying —
+     I've used research.html / harmonica.html / guided-imagery.html. -->
 <nav>
-  <a href="index.html" class="nav-brand">Living Beyond <span>Stroke</span></a>
+  <a href="index.html" class="nav-brand">Living Beyond <span>SCI</span></a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="research.html">Research</a></li>
+    <li><a href="harmonica.html">Harmonica</a></li>
     <li><a href="guided-imagery.html">Guided Imagery</a></li>
-    <li><a href="work-with-jeremy.html" aria-current="page">Work with Jeremy</a></li>
     <li><a href="bibliography.html">Bibliography</a></li>
+    <li><a href="work-with-jeremy.html" aria-current="page">Work with Jeremy</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -72,9 +76,10 @@
 <div class="mobile-menu">
   <a href="index.html">Home</a>
   <a href="research.html">Research</a>
+  <a href="harmonica.html">Harmonica</a>
   <a href="guided-imagery.html">Guided Imagery</a>
-  <a href="work-with-jeremy.html" aria-current="page">Work with Jeremy</a>
   <a href="bibliography.html">Bibliography</a>
+  <a href="work-with-jeremy.html" aria-current="page">Work with Jeremy</a>
   <a href="contact.html">Contact</a>
 </div>
 
@@ -87,12 +92,12 @@
 
 <div class="article-body">
 
-  <!-- About Jeremy — moved here from index.html -->
+  <!-- About Jeremy -->
   <div style="margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border);">
     <div class="section-label">About Jeremy</div>
     <p class="body-copy">I am Jeremy. I hold a Masters of Social Sciences majoring in Psychology from Waikato University, New Zealand. My graduate research — conducted at Deakin University in Melbourne under Professor Robert Cummins — examined what helps people not merely survive serious disability, but flourish. I also hold a Diploma of Solution-Oriented Hypnosis.</p>
     <p class="body-copy">Over two decades of work in rehabilitation, imagery, and wellbeing, the question I keep returning to is this: what is the mind's role in recovery? Not in any mystical sense, but in the precise neurological sense. The brain is plastic. Mental practice activates real motor networks. These are not beliefs — they are findings, replicated across hundreds of studies.</p>
-    <p class="body-copy" style="margin-bottom:0;">This site brings together the research on guided imagery and stroke rehabilitation, and a free programme built from that evidence. Nothing here is a substitute for clinical care. What it offers is a complement — a practice you can carry into the spaces between therapy sessions, into the morning before you rise, and into the quiet before sleep. I haven't had a stroke myself, and I don't claim the authority of lived experience — this site grows out of my research training and my work in the Ericksonian therapeutic tradition, offered in good faith and openly labelled as a personal synthesis.</p>
+    <p class="body-copy" style="margin-bottom:0;">This site brings together the quality-of-life research, a free guided imagery programme built from the evidence, and a hands-free harmonica course for people with tetraplegia. Nothing here is a substitute for clinical care. What it offers is a complement — a practice you can carry into the spaces between therapy sessions, into the morning before you rise, and into the quiet before sleep. I don't have a spinal cord injury myself, and I don't claim the authority of lived experience — this site grows out of my research training and my work in the Ericksonian therapeutic tradition, offered in good faith and openly labelled as a personal synthesis.</p>
   </div>
 
   <!-- Opening -->
@@ -104,18 +109,20 @@
 
   <!-- One to one -->
   <div class="section-label">One to one</div>
-  <!-- Private-topic list confirmed by Jeremy, 2 Aug 2026. -->
-  <p class="body-copy">These sessions are a quieter, personal way in — for anything that feels too personal to work through alone, including continence, swallowing difficulty, speech and communication changes, or intimacy and sexual function after stroke, as examples. Just the two of us, at your pace.</p>
+  <!-- JEREMY: private-topic list below mirrors the five practice pages. Trim or reorder if you'd rather. -->
+  <p class="body-copy">These sessions are a quieter, personal way in — for anything that feels too personal to work through alone, including bladder and bowel management, spasticity, hand and grasp function, or intimacy and sexual sensation after injury, as examples. Just the two of us, at your pace.</p>
 
-  <p class="body-copy">These sessions are personal support for living well after stroke. They are not a medical treatment, and they are not a promise of physical recovery — the same honest framing that runs through the whole programme. They sit alongside your rehabilitation team, never in place of it.</p>
+  <p class="body-copy">These sessions are personal support for living well after spinal cord injury. They are not a medical treatment, and they are not a promise of physical recovery — the same honest framing that runs through the whole programme. They sit alongside your clinical and rehabilitation team, never in place of it.</p>
+
+  <p class="body-copy">If pain is part of your picture, we go carefully. The research is honest that imagery can unsettle neuropathic pain for a small number of people, so it's something we watch for together, and stopping or changing course is always a real option.</p>
 
   <div class="section-label" style="margin-top:2rem;">What we might work on</div>
   <ul class="help-list">
     <li>Settling into a regular rhythm with the core practices</li>
     <li>Choosing which of the five practices fit where you are right now</li>
-    <li>Adapting the imagery so it feels true to you, not borrowed</li>
+    <li>Adapting the imagery so it feels true to your body, not borrowed</li>
     <li>Working through the ordinary blocks: impatience, discomfort, the sense that nothing is happening</li>
-    <li>Learning to notice and use the daily rest windows the programme describes</li>
+    <li>Learning to notice and use the three daily windows the programme describes</li>
     <li>Being guided through a full practice live, at your own pace</li>
   </ul>
 
@@ -140,7 +147,7 @@
     </div>
     <div class="detail-row">
       <div class="detail-key">To join</div>
-      <div class="detail-val">Email <a href="mailto:jeremy@livingbeyondstroke.com" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(200,150,60,0.3);">jeremy@livingbeyondstroke.com</a>. There's no form to fill in.</div>
+      <div class="detail-val">Email <a href="mailto:jeremy@livingbeyondsci.com" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(200,150,60,0.3);">jeremy@livingbeyondsci.com</a>. There's no form to fill in.</div>
     </div>
   </div>
 
@@ -153,11 +160,15 @@
     <p style="font-size:0.95rem;color:#4A4438;line-height:1.85;margin:0;">There's no set price here, and no suggested amount. Give what feels right, give what you can, or give nothing at all — that's genuinely fine, and no one will ever know the difference. These sessions and the free practices on this site are offered the same way either way.</p>
   </div>
 
+  <div class="return-link-block">
+    <a href="guided-imagery.html" class="return-link">← Return to the Guided Imagery Programme</a>
+  </div>
+
 </div>
 
 <footer>
-  <a href="index.html" class="footer-brand">Living Beyond <span>Stroke</span></a>
-  <div class="footer-copy">© 2026 Living Beyond Stroke · Not a medical service · Always work with your clinical team</div>
+  <a href="index.html" class="footer-brand">Living Beyond <span>SCI</span></a>
+  <div class="footer-copy">© 2011–2026 Living Beyond SCI · <a href="terms-sitewide.html" style="color:#5A5040;text-decoration:none;border-bottom:1px solid rgba(200,150,60,0.15);">Terms of Use</a> · Not a medical service · Always work with your clinical team</div>
 </footer>
 
 </body>
