@@ -2,20 +2,18 @@
 """
 generate.py — single source of truth -> audio scripts + PDFs + HTML partials.
 
-Reads scripts/*.json (one per practice). Each paragraph is either:
-  - a string (identical in all modes), or
-  - an object {"agnostic","see","feel"} where the imagery cue differs by mode.
+Reads scripts/*.json (one per practice). Each paragraph is a plain string.
+(Previously some paragraphs could be an object with agnostic/see/feel
+wording variants — that system has been removed. Every practice now has
+one script only.)
 
 Outputs, per practice, into DIST:
-  audio_scripts/<id>.txt         one narration script (agnostic; the inclusive
-                                 version for recording — no "picture"/"watch"
-                                 command that assumes a channel)
-  pdf/<id>_both.pdf              printable script, standard wording (agnostic)
-  pdf/<id>_see.pdf               printable script, wording for visualisers
-  pdf/<id>_feel.pdf              printable script, wording for felt-sense
-  partials/<id>_script.html      the HTML script block, agnostic as default,
-                                 data-see / data-feel on paragraphs that vary
-                                 (drop-in for the exercise page toggle)
+  audio_scripts/<id>.txt         one narration script — no "picture"/"watch"
+                                 command that assumes a channel
+  pdf/<id>.pdf                   printable script, standard wording
+  partials/<id>_script.html      the HTML script block — plain paragraphs,
+                                 no data-see / data-feel attributes
+                                 (drop-in for the exercise page script section)
 
 Run:  python3 generate.py
 """
@@ -25,22 +23,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SRC  = os.path.join(HERE, "scripts")
 DIST = "/mnt/user-data/outputs/stroke/dist"
 
-MODES = ("both", "see", "feel")
-MODE_KEY = {"both": "agnostic", "see": "see", "feel": "feel"}
-MODE_LABEL = {
-    "both": "Standard wording",
-    "see":  "For people who picture things easily (visual)",
-    "feel": "For people who feel movement rather than see it (kinesthetic)",
-}
-
-def para_text(p, mode):
-    """Return the text of paragraph p in the requested mode."""
-    if isinstance(p, str):
-        return p
-    return p.get(MODE_KEY[mode], p.get("agnostic"))
-
-def varies(p):
-    return isinstance(p, dict)
+def para_text(p):
+    """Return the text of paragraph p. Paragraphs are plain strings."""
+    return p
 
 # ----------------------------------------------------------------- audio
 def build_audio(practice):
@@ -56,12 +41,12 @@ def build_audio(practice):
         lines.append("— %s —" % ph["label"].upper())
         lines.append("")
         for p in ph["paras"]:
-            lines.append(para_text(p, "both"))   # agnostic narration
+            lines.append(para_text(p))
             lines.append("")
     return "\n".join(lines).rstrip() + "\n"
 
 # ----------------------------------------------------------------- pdf
-def build_pdf(practice, mode, path):
+def build_pdf(practice, path):
     from reportlab.lib.pagesizes import A4
     from reportlab.lib.units import mm
     from reportlab.lib import colors
@@ -83,8 +68,6 @@ def build_pdf(practice, mode, path):
                              textColor=CHAR, spaceAfter=4, leading=26),
         "meta": ParagraphStyle("meta", fontName="Helvetica", fontSize=9,
                               textColor=MUTE, spaceAfter=2, leading=13),
-        "mode": ParagraphStyle("mode", fontName="Helvetica-Oblique", fontSize=9,
-                              textColor=GOLD, spaceBefore=6, spaceAfter=2, leading=13),
         "phase": ParagraphStyle("phase", fontName="Helvetica-Bold", fontSize=9,
                                textColor=GOLD, spaceBefore=16, spaceAfter=7,
                                leading=13),
@@ -105,13 +88,12 @@ def build_pdf(practice, mode, path):
     story.append(Paragraph("%s &nbsp;·&nbsp; %s" % (html.escape(practice["evidence"]), html.escape(practice["duration"])), styles["meta"]))
     story.append(Spacer(1, 4))
     story.append(HRFlowable(width="100%", thickness=0.6, color=GOLD, spaceAfter=6))
-    story.append(Paragraph("This version: %s" % MODE_LABEL[mode], styles["mode"]))
     story.append(Paragraph("Read slowly — about 30–45 seconds per paragraph. There is no hurry.", styles["meta"]))
 
     for ph in practice["phases"]:
         block = [Paragraph(html.escape(ph["label"]).upper(), styles["phase"])]
         for p in ph["paras"]:
-            txt = html.escape(para_text(p, mode))
+            txt = html.escape(para_text(p))
             block.append(Paragraph(txt, styles["body"]))
         # keep each phase heading with at least its first paragraph
         story.append(KeepTogether(block[:2]))
@@ -124,7 +106,7 @@ def build_pdf(practice, mode, path):
         "Pathway: %s" % html.escape(practice["pathway_note"]), styles["foot"]))
     story.append(Paragraph(
         "Free educational resource. Not a medical service. Always work with your clinical team. "
-        "The three-phase structure is the author's synthesis, not a clinically tested protocol as a unit.",
+        "The four-part structure is the author's synthesis, not a clinically tested protocol as a unit.",
         styles["foot"]))
     doc.build(story)
 
@@ -142,13 +124,8 @@ def build_partial(practice):
             last = (pi == nph-1) and (idx == npar-1)
             mb = "0" if last else ("1.75rem" if idx == npar-1 else "1rem")
             style = "margin-bottom:%s;" % mb
-            agn = html.escape(para_text(p, "both"))
-            if varies(p):
-                see = html.escape(p["see"]).replace('"', "&quot;")
-                feel = html.escape(p["feel"]).replace('"', "&quot;")
-                out.append('<p style="%s" data-see="%s" data-feel="%s">%s</p>' % (style, see, feel, agn))
-            else:
-                out.append('<p style="%s">%s</p>' % (style, agn))
+            txt = html.escape(para_text(p))
+            out.append('<p style="%s">%s</p>' % (style, txt))
     return "\n".join(out) + "\n"
 
 # ----------------------------------------------------------------- run
@@ -169,14 +146,13 @@ def main():
         with open(os.path.join(DIST,"audio_scripts","%s.txt"%pid),"w",encoding="utf-8") as fh:
             fh.write(build_audio(practice)); counts["audio"] += 1
 
-        for mode in MODES:
-            build_pdf(practice, mode, os.path.join(DIST,"pdf","%s_%s.pdf"%(pid,mode)))
-            counts["pdf"] += 1
+        build_pdf(practice, os.path.join(DIST,"pdf","%s.pdf"%pid))
+        counts["pdf"] += 1
 
         with open(os.path.join(DIST,"partials","%s_script.html"%pid),"w",encoding="utf-8") as fh:
             fh.write(build_partial(practice)); counts["partial"] += 1
 
-        print("  built %-10s  audio + 3 PDFs + partial" % pid)
+        print("  built %-10s  audio + 1 PDF + partial" % pid)
 
     print("\nTotals: %d audio scripts, %d PDFs, %d HTML partials" %
           (counts["audio"], counts["pdf"], counts["partial"]))
