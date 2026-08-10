@@ -60,7 +60,7 @@
   .gait-num{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem;}
   .gait-name{font-family:'Lora',serif;font-size:0.9rem;color:var(--charcoal);font-weight:400;margin-bottom:0.4rem;}
   .gait-desc{font-size:0.78rem;color:var(--muted);line-height:1.6;}
-  .timing-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin:1.5rem 0;}
+  .timing-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin:1.5rem 0;}
   .timing-card{background:var(--warm-white);padding:1.5rem;}
   .timing-label{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
   .timing-title{font-family:'Lora',serif;font-size:0.95rem;color:var(--charcoal);font-weight:400;margin-bottom:0.5rem;}
@@ -75,18 +75,6 @@
   .footer-brand{font-family:'Lora',serif;font-size:0.9rem;color:#5A5040;text-decoration:none;}
   .footer-copy{font-size:0.75rem;color:#3A3020;}
   @media(max-width:900px){nav{padding:0 1.25rem;}.nav-links{display:none;}.hamburger{display:flex;}.timing-grid{grid-template-columns:1fr;}.gait-phases{grid-template-columns:1fr 1fr;}.article-body{padding:2.5rem 1.5rem 4rem;}.hero-inner{padding:0 1.5rem;}}
-
-  /* CUE TOGGLE */
-  .cue-toggle{border:1px solid var(--border);background:var(--cream);padding:1.25rem 1.5rem;margin:1.25rem 0 1.5rem;}
-  .cue-toggle-label{font-size:0.66rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
-  .cue-toggle-intro{font-size:0.85rem;color:#5A5040;line-height:1.75;margin-bottom:1rem;}
-  .cue-toggle-intro a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(200,150,60,0.3);}
-  .cue-btns{display:flex;gap:0.5rem;flex-wrap:wrap;}
-  .cue-btn{flex:1 1 0;min-width:110px;background:var(--warm-white);border:1px solid var(--border);color:var(--muted);font-family:'DM Sans',sans-serif;font-size:0.78rem;letter-spacing:0.05em;padding:0.7rem 0.5rem;cursor:pointer;transition:all 0.15s;text-align:center;line-height:1.4;}
-  .cue-btn:hover{border-color:var(--gold);}
-  .cue-btn.active{background:var(--gold);border-color:var(--gold);color:#fff;}
-  .cue-btn small{display:block;font-size:0.66rem;opacity:0.8;margin-top:0.15rem;}
-  .cue-status{font-size:0.78rem;color:var(--muted);font-style:italic;margin-top:0.85rem;}
 </style>
 </head>
 <body>
@@ -135,103 +123,92 @@
     <p class="console-note">Audio to be recorded. The written script below is equally effective to read quietly to yourself.</p>
   </div>
 
-  <h2 class="section-head">What This Practice Targets</h2>
-  <p class="body-text">Gait impairment after stroke ranges from hemiplegia requiring full assistance to subtle asymmetries in walking speed, step length, or cadence that persist long after formal rehabilitation ends. Mental practice for gait recovery has been studied in multiple randomised trials, with a 2010 meta-analysis by Malouin and Richards concluding that mental practice produces significant improvements in walking speed and mobility measures in people with stroke — adding to whatever gains physical therapy alone can achieve.</p>
-  <p class="body-text">Walking is a complex, sequenced motor programme — far more sophisticated than it feels during ordinary life. This practice asks you to reimagine that sophistication from the inside: the way weight moves from foot to foot, the hip flexors lifting the swinging leg, the knee extending for heel strike, the calf pushing off for the next step. The goal is not visualising walking from the outside. It is feeling walking from within.</p>
+  <h2 class="section-head">What This Practice Helps With</h2>
+  <p class="body-text">Walking problems after stroke range from needing full support to walk, right through to small differences in speed or step length that stick around long after formal rehab ends. Mental practice for walking has been tested in several proper trials. A 2010 review of the evidence (by Malouin and Richards) found that mental practice genuinely improves walking speed and mobility in people who've had a stroke — on top of whatever physiotherapy alone achieves.</p>
+  <p class="body-text">Walking is a complicated, carefully timed sequence of movements — far more complex than it feels in everyday life. This practice asks you to imagine that complexity from the inside: the way your weight shifts from foot to foot, the muscles at the front of your hip lifting your leg through, your knee straightening as your heel lands, your calf pushing you forward into the next step. The goal isn't picturing walking like a video from the outside. It's feeling walking from within your own body.</p>
 
-  <h3 class="sub-head" style="font-family:'Lora',serif;font-weight:400;color:var(--bark);font-size:1rem;letter-spacing:0.02em;margin:1.75rem 0 1rem;">The Four Parts of Gait — What This Practice Rehearses</h3>
+  <h3 class="sub-head" style="font-family:'Lora',serif;font-weight:400;color:var(--bark);font-size:1rem;letter-spacing:0.02em;margin:1.75rem 0 1rem;">The Four Stages of a Step — What This Practice Rehearses</h3>
   <div class="gait-phases">
     <div class="gait-cell">
       <div class="gait-num">Phase 1</div>
-      <div class="gait-name">Loading Response</div>
-      <p class="gait-desc">Heel strike. Weight transfers to the foot. The knee flexes slightly to absorb impact.</p>
+      <div class="gait-name">Heel Strike</div>
+      <p class="gait-desc">Your heel touches down and your weight moves onto that foot. Your knee bends slightly to soften the impact.</p>
     </div>
     <div class="gait-cell">
       <div class="gait-num">Phase 2</div>
-      <div class="gait-name">Mid-Stance</div>
-      <p class="gait-desc">The body moves forward over the support foot. Single-leg balance. Hip extensors active.</p>
+      <div class="gait-name">Standing on One Leg</div>
+      <p class="gait-desc">Your body moves forward over the foot that's on the ground. You're balancing on one leg for a moment. Muscles at the back of your hip keep you upright.</p>
     </div>
     <div class="gait-cell">
       <div class="gait-num">Phase 3</div>
-      <div class="gait-name">Push-Off</div>
-      <p class="gait-desc">The calf propels the body forward. The heel rises. The toes push down and back.</p>
+      <div class="gait-name">Pushing Off</div>
+      <p class="gait-desc">Your calf muscle pushes your body forward. Your heel lifts. Your toes press down and back off the ground.</p>
     </div>
     <div class="gait-cell">
       <div class="gait-num">Phase 4</div>
-      <div class="gait-name">Swing Phase</div>
-      <p class="gait-desc">The hip flexors lift the leg. The knee bends. The foot clears the ground and moves forward.</p>
+      <div class="gait-name">Leg Swinging Through</div>
+      <p class="gait-desc">Muscles at the front of your hip lift your leg. Your knee bends. Your foot clears the ground and swings forward.</p>
     </div>
   </div>
 
   <h2 class="section-head">The Four Parts of This Practice</h2>
 
   <div class="phase-card" style="margin-bottom:1px;">
-    <div class="phase-eyebrow">Opening · Breath and Light · 2–3 minutes</div>
+    <div class="phase-eyebrow">Part I · Breath and Light · 2–3 minutes</div>
     <div class="phase-title">Settling</div>
-    <p>You find a comfortable position. Sitting upright, or lying back. Breathing slows. Attention is brought to the top of the head — a point of warmth there — and with each breath in, that warmth descends. The intention of this opening phase is not relaxation for its own sake, but the preparation of a nervous system ready to respond to imagery. Walking is a complex motor programme. The internal representation of it will be clearer when the background noise of stress and distraction has quietened.</p>
+    <p>You find a comfortable position. Sitting upright, or lying back. Your breathing slows. Your attention goes to the top of your head — a point of warmth there — and with each breath in, that warmth moves down. This opening isn't about relaxing just for the sake of it — it's about getting your nervous system ready to take in the imagery properly. Walking is a complicated set of movements. The picture of it in your mind will be clearer once the background noise of stress and distraction has settled.</p>
   </div>
 
   <div class="phase-card" style="margin-bottom:1px;">
-    <div class="phase-eyebrow">Phase I · The Ideal Being · 3–4 minutes</div>
+    <div class="phase-eyebrow">Part II · The Ideal Being · 3–4 minutes</div>
     <div class="phase-title">Watching, Then Walking</div>
-    <p>A figure appears ahead of you, at the far end of a familiar path — a corridor, a garden, a street you know well. The figure is walking. Not rushing. Walking at a natural pace, with a quality that you recognise as easy. You watch the way they move: the slight rotation in the pelvis, the arm swing that balances the leg movement, the even distribution of weight from one foot to the other. No circumduction. No hip hike. No foot drop. Just walking, the way walking used to feel.</p>
-    <p>You study the details. The rhythm of it. The way the heel meets the ground and the weight rolls forward through the arch and off the ball of the foot. The knee bending just enough in the swing phase. The unhurried quality of the whole thing.</p>
-    <p>The figure pauses. Turns. Walks back toward you. And steps into you. Now you are walking. Feel it from inside: the weight shifting, the hip lifting the swinging leg, the heel striking, the momentum carrying you forward. You are walking down that familiar path. Each step easy. Each step yours.</p>
+    <p>A figure appears ahead of you, at the far end of a familiar path — a corridor, a garden, a street you know well. The figure is walking. Not rushing. Walking at a natural pace, in a way that looks easy. You watch how they move: the slight turn in their hips, the arms swinging to balance the legs, the weight moving evenly from one foot to the other. No swinging the leg out to the side. No hip hitching up. No foot dragging. Just walking, the way it used to feel.</p>
+    <p>You notice the details. The rhythm of it. How the heel meets the ground and the weight rolls forward through the arch and off the front of the foot. The knee bending just enough as the leg swings through. The unhurried feel of the whole thing.</p>
+    <p>The figure pauses. Turns. Walks back toward you. And steps into you. Now you're walking. Feel it from the inside: the weight shifting, your hip lifting your swinging leg, your heel touching down, the momentum carrying you forward. You're walking down that familiar path. Each step easy. Each step yours.</p>
   </div>
 
   <div class="phase-card" style="margin-bottom:1px;">
-    <div class="phase-eyebrow">Phase II · The Anatomical Pathway · 3–4 minutes</div>
+    <div class="phase-eyebrow">Part III · The Anatomical Pathway · 3–4 minutes</div>
     <div class="phase-title">Following the Signal</div>
-    <p>Now go inward. Into the motor cortex — this time to the area along the top and inner surface of the brain, the part that controls the leg. On the side opposite your affected leg. That area is intact in memory, if not always in function. It still holds the pattern of walking. It was built over years of use. It is not erased by stroke — it is interrupted. And the path of this practice is to rehearse the signal again and again until new routes form and old routes recover.</p>
-    <p>A signal leaves the leg area of the motor cortex. It travels down through the internal capsule, continuing into the brainstem, crosses in the pyramidal decussation, and enters the lumbar region of the spinal cord. From there, it exits through the anterior horn cells and enters the sciatic nerve — the longest nerve in the body, running from the lower spine through the buttock and down the back of the leg. It branches: the peroneal nerve runs around the outside of the knee and into the muscles that lift the foot. The tibial nerve descends into the calf and into the intrinsic muscles of the foot.</p>
+    <p>Now go inward. Into the motor cortex — this time to the area running along the top and inner surface of your brain, the part that controls your leg. On the side opposite your affected leg. That area still remembers walking, even if it can't always carry it out. It holds the pattern, built up over years of use. Stroke doesn't erase it — it interrupts it. This practice rehearses the signal again and again until new routes form and old ones recover.</p>
+    <p>A signal leaves the leg area of your brain. It travels down through the brain's wiring, into the brainstem, crosses to the other side of the body, and enters your lower spine. From there, it heads into the longest nerve in your body — running from your lower spine, through your buttock, and down the back of your leg. It splits into two: one branch runs around the outside of your knee and into the muscles that lift your foot, the other runs down your calf and into the muscles of your foot.</p>
 
     <div class="pathway-placeholder">
       <strong>Anatomical Illustration Placeholder</strong>
-      Motor cortex (leg area, medial surface) → internal capsule → corticospinal tract → lumbar cord → sciatic nerve → peroneal + tibial branches → leg and foot muscles
+      Brain (leg area) → spinal cord → longest nerve in the body → foot-lifting and push-off muscles
       <!-- Illustration note (internal, not for display): AI-generated anatomical images may be inaccurate. Source from Servier Medical Art (smart.servier.com) or licensed anatomical stock. Consider a simplified posterior view of the lower body showing the sciatic nerve's path. -->
     </div>
 
-    <p>Now make a gentle intention to walk. In your mind, take one step. Then another. Not the full programme — just the intention, and the awareness of the entire pathway from motor cortex to foot. Send the signal. Feel the response — whatever it is. The rehearsal is the practice. The brain records this. And the cortex reorganises around what it rehearses.</p>
+    <p>Now form a gentle intention to walk. In your mind, take one step. Then another. Not the whole sequence — just the intention, and an awareness of the whole path from your brain to your foot. Send the signal. Notice whatever response comes back. The rehearsal is the practice. Your brain records this. And it reorganises itself around what it rehearses.</p>
   </div>
 
   <div class="phase-card">
-    <div class="phase-eyebrow">Closing · Breath and Light · 2 minutes</div>
+    <div class="phase-eyebrow">Part IV · Breath and Light · 2 minutes</div>
     <div class="phase-title">Integration</div>
-    <p>Return to the breath. The imagery of walking settles. You are wherever you are — in your chair, your bed, your room. The body has been still throughout this practice. But the brain has been walking. Those signals were real. The consolidation begins now, in the quiet following the practice. Take three long slow breaths. Orient to the room. You're done for now.</p>
+    <p>Return to your breath. The imagery of walking settles. You're wherever you are — in your chair, your bed, your room. Your body has been still the whole time. But your brain has been walking. Those signals were real. The locking-in begins now, in the quiet after the practice. Take three long, slow breaths. Notice the room around you. You're done for now.</p>
   </div>
 
   <h2 class="section-head">The Full Script</h2>
   <p class="body-text">Read slowly, allowing approximately 30–45 seconds per paragraph.</p>
-  
-  <div class="cue-toggle">
-    <div class="cue-toggle-label">Set the script to match how you imagine</div>
-    <p class="cue-toggle-intro">People imagine in different ways. Some see pictures; some feel movement without seeing anything. Pick the one that fits you and the words below will change to suit. Not sure? Take the <a href="imagery-check.html">five-minute check</a> first.</p>
-    <div class="cue-btns">
-      <button type="button" class="cue-btn" data-mode="see">I see it<small>Pictures come easily</small></button>
-      <button type="button" class="cue-btn active" data-mode="both">Both<small>A bit of each</small></button>
-      <button type="button" class="cue-btn" data-mode="feel">I feel it<small>Little or no picture</small></button>
-    </div>
-    <p class="cue-status" id="cueStatus">Showing the standard wording.</p>
-  </div>
   <details style="margin:1.25rem 0 2.5rem;border:1px solid var(--border);padding:1.25rem 1.5rem;background:rgba(200,150,60,0.03);">
     <summary style="cursor:pointer;font-size:0.85rem;color:var(--gold);letter-spacing:0.06em;text-transform:uppercase;">Read the full script</summary>
     <div style="margin-top:1.75rem;font-size:0.93rem;color:#4A4438;line-height:1.9;">
       <!-- GENERATED from scripts/walking.json — do not edit by hand; edit the JSON and re-run generate.py -->
-      <p style="font-family:'Lora',serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem;">Opening · Breath and Light</p>
+      <p style="font-family:'Lora',serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem;">Part I · Breath and Light</p>
       <p style="margin-bottom:1rem;">Find a comfortable position. Sitting upright, or lying back — whichever allows you to stay alert without holding yourself up. Let your legs rest where they are.</p>
       <p style="margin-bottom:1rem;">Take a slow breath in. Let it out. Again. On each out-breath, let a little more of the body&#x27;s weight drop into whatever is supporting you.</p>
       <p style="margin-bottom:1.75rem;">Bring your attention to the top of your head. There is a soft, warm point there — like the first touch of sun on a cold morning. On each breath in, that warmth enters. Moves down. Through the skull, through the back of the eyes, through the throat and into the chest. No urgency. The warmth finds its own way.</p>
-      <p style="font-family:'Lora',serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem;">Phase I · The Ideal Being</p>
-      <p style="margin-bottom:1rem;" data-see="Ahead of you, some distance away, is a figure. They are at the far end of a path you know — a hallway, a garden, a street from somewhere in your life. Take a moment to see the path: the floor or the ground, the walls or the trees, the light. The figure is walking toward you. Unhurried. Steady. The way walking should feel when it doesn&#x27;t require thought." data-feel="Ahead of you, some distance away, there is a figure. You may not see them clearly, or at all — that is fine. Simply sense that someone is there, at the far end of a path you know: a hallway, a garden, a street from somewhere in your life. Sense them walking toward you. Unhurried. Steady. The way walking feels when it doesn&#x27;t require thought.">Ahead of you, some distance away, there is a figure. You may see them, or simply sense that they are there — either is right. They are at the far end of a path you know: a hallway, a garden, a street from somewhere in your life. They are moving toward you. Unhurried. Steady. The way walking feels when it doesn&#x27;t require thought.</p>
-      <p style="margin-bottom:1rem;" data-see="Watch them. The rhythm of the arms swinging in opposition to the legs. The way the heel meets the ground and the weight rolls forward. The knee bending cleanly in the swing phase. No compensations. No effortful adjustments. Just walking." data-feel="Sense the walking. The rhythm of the arms swinging against the legs. The heel meeting the ground and the weight rolling forward through the foot. The knee bending cleanly in the swing. No compensations, no effortful adjustments. Just walking.">Notice them walking. The rhythm of the arms swinging in opposition to the legs. The heel meeting the ground and the weight rolling forward. The knee bending cleanly in the swing. No compensations. No effortful adjustments. Just walking.</p>
-      <p style="margin-bottom:1.75rem;" data-see="The figure reaches you. Steps into you. Now you are walking — down that same path, in that same direction. The rhythm is yours now. The weight shifting from foot to foot. The hip lifting the swinging leg. The heel meeting the ground. The push-off from the calf. Step after step. You are walking." data-feel="The figure reaches you. Steps into you. Now you are walking. Forget the picture entirely — stay with the feeling. The weight rolling from one foot to the other. The hip lifting the swinging leg. The heel meeting the ground. The push through the calf. The small sway of the body. Step after step. You are walking. This is all feeling, and feeling is enough.">The figure reaches you. Steps into you. Now you are walking — down that same path, in that same direction. The rhythm is yours. The weight shifting from foot to foot. The hip lifting the swinging leg. The heel meeting the ground. The push-off from the calf. Step after step. You are walking — however that comes to you, as picture or as feeling.</p>
-      <p style="font-family:'Lora',serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem;">Phase II · The Anatomical Pathway</p>
+      <p style="font-family:'Lora',serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem;">Part II · The Ideal Being</p>
+      <p style="margin-bottom:1rem;">Ahead of you, some distance away, there is a figure. You may see them, or simply sense that they are there — either is right. They are at the far end of a path you know: a hallway, a garden, a street from somewhere in your life. They are moving toward you. Unhurried. Steady. The way walking feels when it doesn&#x27;t require thought.</p>
+      <p style="margin-bottom:1rem;">Notice them walking. The rhythm of the arms swinging in opposition to the legs. The heel meeting the ground and the weight rolling forward. The knee bending cleanly in the swing. No compensations. No effortful adjustments. Just walking.</p>
+      <p style="margin-bottom:1.75rem;">The figure reaches you. Steps into you. Now you are walking — down that same path, in that same direction. The rhythm is yours. The weight shifting from foot to foot. The hip lifting the swinging leg. The heel meeting the ground. The push-off from the calf. Step after step. You are walking — however that comes to you, as picture or as feeling.</p>
+      <p style="font-family:'Lora',serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem;">Part III · The Anatomical Pathway</p>
       <p style="margin-bottom:1rem;">Now go inward. To the leg area of the motor cortex — on the inner surface of the brain, opposite your affected side. That area has always known how to walk. The pattern is held there. Stroke interrupts the signal, not the knowledge.</p>
       <p style="margin-bottom:1rem;">A signal begins at the motor cortex. It travels downward through the internal capsule, through the brainstem, crossing at the pyramid, entering the lumbar spinal cord. It exits through the front of the cord. Travels out through the sciatic nerve — down through the buttock, the back of the thigh, and there it branches: the peroneal nerve, which lifts the foot, and the tibial nerve, which drives the push-off.</p>
       <p style="margin-bottom:1.75rem;">Now intend to take a step. Send the signal — all the way down. Whatever the outside does or doesn&#x27;t do, the signal was sent. The pathway was rehearsed. The brain records it. And what the brain rehearses, it reorganises around.</p>
-      <p style="font-family:'Lora',serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem;">Closing · Breath and Light</p>
+      <p style="font-family:'Lora',serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem;">Part IV · Breath and Light</p>
       <p style="margin-bottom:1rem;">Return to your breath. The practice has been received. Consolidation happens in the quiet that follows — not during the effort. Let the practice settle.</p>
-      <p style="margin-bottom:0;" data-see="When you notice your attention softening later today — that natural drift — return for a breath or two to the image of walking: the weight moving forward, the heel meeting the ground. Before sleep, hold that image. Your brain keeps practising while you rest. Take a long out-breath now. Notice the room. Enough." data-feel="When you notice your attention softening later today — that natural drift — return for a breath or two to the feeling of walking: the weight moving forward, the heel meeting the ground, the push through the calf. Before sleep, hold that feeling. Your brain keeps practising while you rest. Take a long out-breath now. Notice the room. Enough.">When you notice your attention softening later today — that natural drift — return for a breath or two to walking: the weight moving forward, the heel meeting the ground. Before sleep, hold it however it comes to you. Your brain keeps practising while you rest. Take a long out-breath now. Notice the room. Enough.</p>
+      <p style="margin-bottom:0;">When you notice your attention softening later today — that natural drift — return for a breath or two to walking: the weight moving forward, the heel meeting the ground. Before sleep, hold it however it comes to you. Your brain keeps practising while you rest. Take a long out-breath now. Notice the room. Enough.</p>
     </div>
   </details>
 
@@ -252,12 +229,17 @@
       <div class="timing-title">Priming the motor network</div>
       <p>If you have a physiotherapy session or walking practice, spend five minutes on the imagery beforehand. The mental rehearsal primes the neural pathways that physical practice will then activate.</p>
     </div>
+    <div class="timing-card">
+      <div class="timing-label">On waking</div>
+      <div class="timing-title">The first steps of the day</div>
+      <p>Before you take your first steps of the day, spend a few breaths returning to the walking image — the weight shifting, the heel meeting the ground. Stiffness is often at its lowest in these first minutes, and the nervous system is still soft from sleep.</p>
+    </div>
   </div>
 
   <div class="academic-note">
     <div class="academic-note-label">An Honest Note</div>
-    <p>The evidence for mental practice in gait recovery after stroke is positive and consistent across trials, though effect sizes are smaller than those found for upper limb recovery. Malouin and Richards (2010) found significant improvements in walking speed and mobility in their meta-analysis, but the field is still developing clearer guidance on dose and delivery.</p>
-    <p>This practice is not a substitute for physiotherapy. If you are working with a physiotherapist on gait retraining, tell them about this practice. Many will be able to suggest specific movements to rehearse in the imagery that complement your physical exercises.</p>
+    <p>The evidence for mental practice helping walking after stroke is positive and consistent across studies, though the effect isn't as strong as what's been found for the arm and hand. A 2010 review by Malouin and Richards found real improvements in walking speed and mobility, but researchers are still working out the clearest guidance on exactly how much practice and in what form works best.</p>
+    <p>This practice isn't a substitute for physiotherapy. If you're working with a physiotherapist on your walking, tell them about this practice. Many will be able to suggest specific movements to rehearse in the imagery that fit alongside your physical exercises.</p>
   </div>
 
   <div class="exercise-nav">
@@ -272,50 +254,5 @@
   <div class="footer-copy">© 2025 Living Beyond Stroke</div>
 </footer>
 
-<script>
-(function(){
-  var KEY = 'lbs-cue-mode';
-  var STATUS = {
-    see:  'Wording set for people who picture things easily.',
-    both: 'Showing the standard wording.',
-    feel: 'Wording set for people who feel movement rather than see it.'
-  };
-
-  function load(){
-    try { return localStorage.getItem(KEY); } catch(e){ return null; }
-  }
-  function save(m){
-    try { localStorage.setItem(KEY, m); } catch(e){ /* storage unavailable — fine */ }
-  }
-
-  function apply(mode){
-    var nodes = document.querySelectorAll('[data-see]');
-    for (var i=0;i<nodes.length;i++){
-      var n = nodes[i];
-      if (!n.hasAttribute('data-both')) n.setAttribute('data-both', n.innerHTML);
-      var next = n.getAttribute('data-' + mode);
-      if (next !== null) n.innerHTML = next;
-    }
-    var btns = document.querySelectorAll('.cue-btn');
-    for (var j=0;j<btns.length;j++){
-      btns[j].classList.toggle('active', btns[j].getAttribute('data-mode') === mode);
-    }
-    var s = document.getElementById('cueStatus');
-    if (s) s.textContent = STATUS[mode] || STATUS.both;
-  }
-
-  var btns = document.querySelectorAll('.cue-btn');
-  for (var k=0;k<btns.length;k++){
-    btns[k].addEventListener('click', function(){
-      var m = this.getAttribute('data-mode');
-      save(m);
-      apply(m);
-    });
-  }
-
-  var saved = load();
-  if (saved && STATUS[saved]) apply(saved);
-})();
-</script>
 </body>
 </html>
