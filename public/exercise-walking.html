@@ -57,8 +57,30 @@
   .phase-title{font-family:'Lora',serif;font-size:1.1rem;color:var(--charcoal);font-weight:400;margin-bottom:0.6rem;}
   .phase-card p{font-size:0.92rem;color:#4A4438;line-height:1.85;margin-bottom:0.75rem;}
   .phase-card p:last-child{margin-bottom:0;}
-  .pathway-placeholder{aspect-ratio:3/2;max-width:480px;margin:1.5rem 0;border:1px dashed rgba(200,150,60,0.3);background:rgba(200,150,60,0.03);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#8A8070;font-size:0.8rem;letter-spacing:0.05em;padding:1.5rem;line-height:1.7;}
-  .pathway-placeholder strong{display:block;color:var(--gold);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.6rem;font-weight:400;}
+  .pathway-image{margin:1.25rem 0 0;border-top:1px solid rgba(200,150,60,0.15);padding-top:1.25rem;}
+  .pathway-image figure{margin:0;}
+  .pathway-image svg{width:100%;height:auto;display:block;margin:0 auto 0.9rem;}
+  .pathway-image figcaption{font-size:0.82rem;color:var(--muted);line-height:1.7;font-style:italic;text-align:center;max-width:460px;margin:0 auto;}
+  .pathway-note{font-size:0.78rem;color:#A89C84;line-height:1.7;text-align:center;max-width:520px;margin:0.75rem auto 0;}
+  .diagram-label{font-family:'DM Sans',system-ui,sans-serif;font-size:12.5px;letter-spacing:0.11em;text-transform:uppercase;fill:var(--muted);}
+  .diagram-note{font-family:'DM Sans',system-ui,sans-serif;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;fill:var(--gold);}
+  .legend-label{font-family:'DM Sans',system-ui,sans-serif;font-size:12.5px;letter-spacing:0.04em;fill:var(--muted);}
+  .route{fill:none;stroke:var(--gold);stroke-linecap:round;stroke-linejoin:round;}
+  .route-trunk{stroke-width:2.6;}
+  .route-branch{stroke-width:1.7;}
+  .route-segment{stroke-width:5;}
+  @media(prefers-reduced-motion:no-preference){
+    .route{stroke-dasharray:640;stroke-dashoffset:640;animation:trace 2.8s cubic-bezier(0.4,0,0.2,1) forwards;}
+    .route-branch{animation-delay:1.1s;}
+    .terminus{opacity:0;animation:settle 1.2s ease forwards;animation-delay:2.4s;}
+  }
+  @keyframes trace{to{stroke-dashoffset:0;}}
+  @keyframes settle{to{opacity:1;}}
+  @media(max-width:780px){
+    .diagram-label{font-size:17px;letter-spacing:0.06em;}
+    .diagram-note{font-size:16px;letter-spacing:0.08em;}
+    .legend-label{font-size:17px;}
+  }
   .gait-phases{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin:1.75rem 0;}
   .gait-cell{background:var(--warm-white);padding:1.25rem 1rem;text-align:center;}
   .gait-num{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem;}
@@ -170,11 +192,153 @@
     <div class="phase-title">Following the Signal</div>
     <p><strong>What it's for.</strong> For this practice, that pathway runs from the leg area of your brain down to your foot.</p>
       <p><strong>How it works.</strong> Your attention follows a signal from the leg area of your brain, down through the spinal cord in your lower back, and out along the long nerve of the leg to the muscles that lift your foot and drive your push-off. You finish by intending to take a step.</p>
-    <div class="pathway-placeholder">
-      <strong>Anatomical Illustration Placeholder</strong>
-      Brain (leg area) → spinal cord → longest nerve in the body → foot-lifting and push-off muscles
-      <!-- Illustration note (internal, not for display): AI-generated anatomical images may be inaccurate. Source from Servier Medical Art (smart.servier.com) or licensed anatomical stock. Consider a simplified posterior view of the lower body showing the sciatic nerve's path. -->
-    </div>
+    <div class="pathway-image">
+        <figure>
+          <svg viewBox="0 0 720 940" role="img" aria-labelledby="walking-title walking-desc" xmlns="http://www.w3.org/2000/svg">
+            <title id="walking-title">Simplified schematic of the movement pathway from the brain to the muscles that move the foot</title>
+            <desc id="walking-desc">On the left, a front view of a standing figure. A gold line begins in the leg area of the movement cortex, near the top of the brain close to the midline, descends through that side of the brain, and crosses the midline low in the brainstem — which is why one side of the brain moves the opposite leg. It continues the full length of the spinal cord, where a thicker gold segment marks the lower back segments, then leaves through the nerves of the pelvis and runs down the leg to the knee. On the right, the lower leg is shown enlarged from the side, with the nerve dividing below the knee: one branch to the muscle at the front of the shin that lifts the foot, another to the calf muscle behind that drives push-off.</desc>
+
+            <!-- ---------- Main figure: front view, standing ---------- -->
+
+            <ellipse cx="270" cy="86" rx="42" ry="48" fill="#EFE9DD" stroke="#DCD3C2" stroke-width="1.5"/>
+            <ellipse cx="270" cy="80" rx="33" ry="32" fill="#E4DCCB" stroke="#D0C6B2" stroke-width="1.2"/>
+            <line x1="270" y1="48" x2="270" y2="112" stroke="#D0C6B2" stroke-width="1.1"/>
+
+            <!-- Brainstem -->
+            <path d="M 262 114 C 268 126, 268 142, 264 156 C 276 156, 282 142, 282 126 C 282 118, 278 112, 272 110 Z"
+                  fill="#E4DCCB" stroke="#D0C6B2" stroke-width="1.2"/>
+
+            <!-- Torso -->
+            <path d="M 250 130
+                     C 250 140, 240 146, 222 154
+                     C 204 162, 194 172, 192 188
+                     C 190 212, 196 248, 200 284
+                     C 204 318, 206 348, 206 376
+                     L 334 376
+                     C 334 348, 336 318, 340 284
+                     C 344 248, 350 212, 348 188
+                     C 346 172, 336 162, 318 154
+                     C 300 146, 290 140, 290 130 Z"
+                  fill="#EFE9DD" stroke="#DCD3C2" stroke-width="1.5"/>
+
+            <!-- Legs -->
+            <path d="M 208 376 L 260 376 L 256 566 L 250 700 L 250 752 L 210 752 L 212 700 L 206 566 Z"
+                  fill="#EFE9DD" stroke="#DCD3C2" stroke-width="1.5"/>
+            <path d="M 280 376 L 332 376 L 334 566 L 330 700 L 330 752 L 290 752 L 290 700 L 284 566 Z"
+                  fill="#EFE9DD" stroke="#DCD3C2" stroke-width="1.5"/>
+
+            <!-- Feet -->
+            <path d="M 208 752 L 250 752 L 254 774 C 254 780, 248 782, 240 782 L 212 782 C 204 782, 202 776, 204 766 Z"
+                  fill="#EFE9DD" stroke="#DCD3C2" stroke-width="1.4"/>
+            <path d="M 290 752 L 332 752 L 336 774 C 336 780, 330 782, 322 782 L 294 782 C 286 782, 284 776, 286 766 Z"
+                  fill="#EFE9DD" stroke="#DCD3C2" stroke-width="1.4"/>
+
+            <!-- ---------- The pathway ---------- -->
+
+            <!-- Leg area of the movement cortex, near the top and close to the midline -->
+            <path class="route route-trunk" d="M 258 56 C 260 76, 263 94, 266 110"/>
+
+            <!-- Crossing the midline, low in the brainstem -->
+            <path class="route route-trunk" d="M 266 110 C 270 124, 276 134, 282 144 C 285 152, 285 162, 284 172"/>
+
+            <!-- The length of the spinal cord -->
+            <path class="route route-trunk" d="M 284 172 C 284 222, 283 272, 282 312"/>
+
+            <!-- The lower back segments -->
+            <path class="route route-segment" d="M 282 316 L 281 368"/>
+
+            <!-- Out through the nerves of the pelvis -->
+            <path class="route route-branch" d="M 281 340 C 292 348, 302 356, 309 366"/>
+            <path class="route route-branch" d="M 281 358 C 292 362, 302 366, 310 372"/>
+
+            <!-- Down the leg to the knee -->
+            <path class="route route-trunk" d="M 310 370 C 316 424, 318 484, 314 556"/>
+
+            <circle class="terminus" cx="258" cy="56" r="4.5" fill="#C8963C"/>
+            <circle class="terminus" cx="314" cy="556" r="3.4" fill="#C8963C"/>
+
+            <!-- Callout around the lower leg -->
+            <circle cx="312" cy="600" r="52" fill="none" stroke="#D0C6B2" stroke-width="1" stroke-dasharray="3 5"/>
+            <g stroke="#D0C6B2" stroke-width="1" fill="none">
+              <line x1="360" y1="574" x2="470" y2="418"/>
+              <line x1="362" y1="628" x2="470" y2="700"/>
+            </g>
+
+            <!-- ---------- Enlargement: the lower leg, from the side ---------- -->
+            <text class="diagram-note" x="524" y="382" text-anchor="middle">The lower leg, enlarged</text>
+
+            <!-- Shaft of the lower leg, toes pointing right -->
+            <path d="M 490 408
+                     C 484 470, 484 542, 494 612
+                     L 500 664
+                     L 540 664
+                     L 546 604
+                     C 552 528, 554 466, 550 408 Z"
+                  fill="#EFE9DD" stroke="#DCD3C2" stroke-width="1.5"/>
+
+            <!-- Calf muscle, behind -->
+            <path d="M 492 424 C 478 454, 476 502, 488 542 C 500 548, 512 528, 514 494 C 516 460, 506 434, 500 422 Z"
+                  fill="#E4DCCB" stroke="#D0C6B2" stroke-width="1.2"/>
+
+            <!-- Shin muscle, in front -->
+            <path d="M 528 428 C 540 460, 546 512, 540 558 C 532 562, 524 540, 522 500 C 520 466, 522 442, 526 428 Z"
+                  fill="#E4DCCB" stroke="#D0C6B2" stroke-width="1.2"/>
+
+            <!-- Foot -->
+            <path d="M 496 664 L 544 664 L 550 690 L 606 692 C 618 694, 620 706, 608 712 L 500 712 C 486 708, 486 682, 496 664 Z"
+                  fill="#EFE9DD" stroke="#DCD3C2" stroke-width="1.4"/>
+
+            <!-- The nerve dividing below the knee -->
+            <path class="route route-trunk" d="M 520 402 C 518 428, 516 450, 516 470"/>
+            <path class="route route-branch" d="M 516 470 C 524 488, 530 508, 532 530"/>
+            <path class="route route-branch" d="M 516 470 C 508 490, 500 512, 496 534"/>
+            <path class="route route-branch" d="M 516 470 C 514 542, 512 604, 512 648"/>
+
+            <circle class="terminus" cx="532" cy="530" r="3.2" fill="#C8963C"/>
+            <circle class="terminus" cx="496" cy="534" r="3.2" fill="#C8963C"/>
+            <circle class="terminus" cx="512" cy="648" r="3.2" fill="#C8963C"/>
+
+            <!-- ---------- Leader lines ---------- -->
+            <g stroke="#D0C6B2" stroke-width="1" fill="none">
+              <line x1="150" y1="56" x2="250" y2="56"/>
+              <line x1="150" y1="146" x2="272" y2="146"/>
+              <line x1="150" y1="250" x2="276" y2="250"/>
+              <line x1="150" y1="344" x2="274" y2="344"/>
+              <line x1="150" y1="470" x2="308" y2="470"/>
+              <line x1="588" y1="524" x2="546" y2="530"/>
+              <line x1="484" y1="592" x2="498" y2="558"/>
+              <line x1="588" y1="676" x2="546" y2="660"/>
+            </g>
+
+            <!-- ---------- Labels ---------- -->
+            <g class="diagram-label">
+              <text x="142" y="52"  text-anchor="end">Leg area of the</text>
+              <text x="142" y="70"  text-anchor="end">movement cortex</text>
+              <text x="142" y="150" text-anchor="end">Crossing point</text>
+              <text x="142" y="254" text-anchor="end">Spinal cord</text>
+              <text x="142" y="340" text-anchor="end">Lower back</text>
+              <text x="142" y="358" text-anchor="end">segments</text>
+              <text x="142" y="466" text-anchor="end">The long nerve</text>
+              <text x="142" y="484" text-anchor="end">of the leg</text>
+              <text x="596" y="520" text-anchor="start">Foot-lifting</text>
+              <text x="596" y="538" text-anchor="start">muscle</text>
+              <text x="478" y="590" text-anchor="end">Calf muscle,</text>
+              <text x="478" y="608" text-anchor="end">for push-off</text>
+              <text x="596" y="680" text-anchor="start">Ankle</text>
+            </g>
+
+            <!-- ---------- Legend ---------- -->
+            <g transform="translate(214, 872)">
+              <line x1="0" y1="0" x2="34" y2="0" stroke="#C8963C" stroke-width="2.6" stroke-linecap="round"/>
+              <text class="legend-label" x="46" y="4">Movement signal, brain to foot</text>
+              <line x1="0" y1="24" x2="34" y2="24" stroke="#C8963C" stroke-width="5" stroke-linecap="round"/>
+              <text class="legend-label" x="46" y="28">The spinal cord segments this practice reaches</text>
+            </g>
+          </svg>
+          <figcaption>The pathway this practice follows: from the leg area of the brain, across the midline, down the length of the spinal cord to the lower back, and out along the long nerve of the leg.</figcaption>
+        </figure>
+        <p class="pathway-note">A simplified schematic rather than an anatomical reference. The nerves are paired; only one side is drawn. The long nerve of the leg runs down the back of the thigh and divides below the knee, so the lower leg is drawn from the side to show that division.</p>
+      </div>
   </div>
 
   <div class="phase-card">
