@@ -65,4 +65,369 @@
   .diagram-label{font-family:'DM Sans',system-ui,sans-serif;font-size:12.5px;letter-spacing:0.11em;text-transform:uppercase;fill:var(--muted);}
   .diagram-note{font-family:'DM Sans',system-ui,sans-serif;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;fill:var(--gold);}
   .legend-label{font-family:'DM Sans',system-ui,sans-serif;font-size:12.5px;letter-spacing:0.04em;fill:var(--muted);}
-  .route{fill:none;stroke:var(--gold);stroke-linecap:round;stroke-linejoin
+  .route{fill:none;stroke:var(--gold);stroke-linecap:round;stroke-linejoin:round;}
+  .route-trunk{stroke-width:2.6;}
+  .route-branch{stroke-width:1.7;}
+  .route-segment{stroke-width:5;}
+  @media(prefers-reduced-motion:no-preference){
+    .route{stroke-dasharray:640;stroke-dashoffset:640;animation:trace 2.8s cubic-bezier(0.4,0,0.2,1) forwards;}
+    .route-branch{animation-delay:1.1s;}
+    .terminus{opacity:0;animation:settle 1.2s ease forwards;animation-delay:2.4s;}
+  }
+  @keyframes trace{to{stroke-dashoffset:0;}}
+  @keyframes settle{to{opacity:1;}}
+  @media(max-width:780px){
+    .diagram-label{font-size:17px;letter-spacing:0.06em;}
+    .diagram-note{font-size:16px;letter-spacing:0.08em;}
+    .legend-label{font-size:17px;}
+  }
+  .timing-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin:1.5rem 0;}
+  .timing-card{background:var(--warm-white);padding:1.5rem;}
+  .timing-label{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
+  .timing-title{font-family:'Lora',serif;font-size:0.95rem;color:var(--charcoal);font-weight:400;margin-bottom:0.5rem;}
+  .timing-card p{font-size:0.84rem;color:#5A5040;line-height:1.75;}
+  .academic-note{background:var(--cream);border:1px solid var(--border);padding:1.75rem 2rem;margin:2rem 0;}
+  .academic-note-label{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
+  .academic-note p{font-size:0.88rem;color:#5A5040;line-height:1.8;margin-bottom:0.6rem;}
+  .academic-note p:last-child{margin-bottom:0;}
+  .exercise-nav{display:flex;justify-content:space-between;align-items:center;padding:2rem 0;border-top:1px solid var(--border);margin-top:3rem;}
+  .ex-nav-link{font-size:0.8rem;color:var(--gold);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;}
+  footer{background:#1A1810;padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.06);flex-wrap:wrap;gap:1rem;}
+  .footer-brand{font-family:'Lora',serif;font-size:0.9rem;color:#5A5040;text-decoration:none;}
+  .footer-copy{font-size:0.75rem;color:#3A3020;}
+  @media(max-width:900px){nav{padding:0 1.25rem;}.nav-links{display:none;}.hamburger{display:flex;}.timing-grid{grid-template-columns:1fr;}.article-body{padding:2.5rem 1.5rem 4rem;}.hero-inner{padding:0 1.5rem;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand">Living Beyond <span>Stroke</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="guided-imagery.html">Guided Imagery</a></li>
+    <li><a href="work-with-jeremy.html">Work with Jeremy</a></li>
+    <li><a href="bibliography.html">Bibliography</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="research.html">Research</a>
+  <a href="guided-imagery.html">Guided Imagery</a>
+  <a href="work-with-jeremy.html">Work with Jeremy</a>
+  <a href="bibliography.html">Bibliography</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a> <span style="opacity:0.4">·</span> <a href="guided-imagery.html">Guided Imagery</a> <span style="opacity:0.4">·</span> <span>Practice 03</span></div>
+    <div class="article-eyebrow">Practice 03 · Moderate Evidence Base</div>
+    <h1 class="article-h1">Balance and Posture</h1>
+    <p class="article-standfirst">Sitting upright without effort. Standing still without gripping. The body finding its own centre and trusting it. A guided imagery practice for postural stability after stroke.</p>
+    <div class="article-meta">
+      <div class="meta-item"><strong>Frequency</strong> · Daily or 3–5×/week</div>
+      <div class="meta-item"><strong>Evidence</strong> · Positive, smaller trial base than upper limb</div>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+
+  <h2 class="section-head">What This Practice Helps With</h2>
+  <p class="body-text">Balance problems after stroke are common and can have real consequences. Falls are one of the leading causes of injury after stroke. Less obviously, feeling unsteady on your feet also makes people do less — less exercise, less socialising, less of anything that means standing or moving without help.</p>
+  <p class="body-text">Balance isn't a simple skill. It relies on three different senses working together — your eyes, the balance organs in your inner ear, and the sense of where your joints and muscles are — all coordinated by a part of your brain called the cerebellum. A stroke can disrupt any part of this system. Imagery for balance works a bit differently from imagery for arm or leg movement: instead of tracing one simple pathway to one muscle, this practice asks you to rehearse the overall feeling of being centred and steady, rather than one specific sequence of muscles.</p>
+  <p class="body-text">There's less research specifically on imagery for balance than for the arm or walking, but what exists is positive. Studies that combine mental practice with balance training find bigger improvements than balance training on its own. The likely reason is the same as for arm or leg imagery — rehearsing the brain connections that the skill depends on.</p>
+
+  <h2 class="section-head">The Four Parts of This Practice</h2>
+
+  <p class="body-text" style="font-size:0.88rem;color:var(--muted);">For why this method works and how the four parts fit together, see <a href="guided-imagery.html#four-parts" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(200,150,60,0.3);">The Four Parts</a> on the Guided Imagery page.</p>
+
+  <div class="phase-card" style="margin-bottom:1px;">
+    <div class="phase-eyebrow">Part I · Breath and Light</div>
+    <div class="phase-title">Settling into the Body</div>
+    <p><strong>What it's for.</strong> Balance depends on knowing where your weight is, so this practice builds that awareness first.</p>
+      <p><strong>How it works.</strong> You let the surface beneath you take your weight entirely, slow your breathing, and notice where your body makes contact. Warmth travels from the top of your head down to the base of your spine — your centre.</p>
+  </div>
+
+  <div class="phase-card" style="margin-bottom:1px;">
+    <div class="phase-eyebrow">Part II · The Ideal Being</div>
+    <div class="phase-title">Watching Someone Stand</div>
+    <p><strong>What it's for.</strong> For this practice, that means watching a stance that isn't guarded or braced — then feeling that steadiness as your own.</p>
+      <p><strong>How it works.</strong> You watch a figure simply standing: weight even, spine long, unhurried. They sit and rise again, easily. The figure then steps into you, and the steadiness becomes yours.</p>
+  </div>
+
+  <div class="phase-card" style="margin-bottom:1px;">
+    <div class="phase-eyebrow">Part III · The Anatomical Pathway</div>
+    <div class="phase-title">The Balance Network</div>
+    <p><strong>What it's for.</strong> For this practice, the pathway isn't one route to one muscle — it's the whole balance system working together.</p>
+      <p><strong>How it works.</strong> Your attention goes to the cerebellum at the base of your skull, then to the signals reaching it — from your inner ear, and from your ankles, knees, and hips — and then out again to the muscles that hold you upright.</p>
+    <div class="pathway-image">
+        <figure>
+          <svg viewBox="0 0 720 900" role="img" aria-labelledby="balance-title balance-desc" xmlns="http://www.w3.org/2000/svg">
+            <title id="balance-title">Simplified schematic of the balance network</title>
+            <desc id="balance-desc">A side view of a standing figure facing left. Gold lines run from the eye and from the balance organ of the inner ear back to the cerebellum, at the base and back of the brain. From there a gold line descends through the brainstem and the length of the spinal cord, sending branches out to the muscles of the trunk, the hip and the ankle, and continuing down the leg to sensors at the ankle. Small chevrons on the spinal line point both up and down, showing that this is a continuous loop rather than a one-way route: the body reports its position upward and corrections travel back down. On the right, the balance organ of the inner ear is shown enlarged as three fluid-filled loops set at angles to one another.</desc>
+
+            <!-- ---------- Head in profile, facing left ---------- -->
+            <ellipse cx="300" cy="110" rx="58" ry="64" fill="#EFE9DD" stroke="#DCD3C2" stroke-width="1.5"/>
+            <path d="M 244 100 C 234 112, 232 124, 242 130" fill="#EFE9DD" stroke="#DCD3C2" stroke-width="1.4"/>
+            <ellipse cx="304" cy="100" rx="45" ry="41" fill="#E4DCCB" stroke="#D0C6B2" stroke-width="1.2"/>
+
+            <!-- Cerebellum, at the back and base of the brain -->
+            <ellipse cx="338" cy="140" rx="26" ry="18" fill="#DDD3BF" stroke="#C9BEA6" stroke-width="1.3"/>
+            <g stroke="#C9BEA6" stroke-width="0.9" fill="none">
+              <path d="M 320 134 C 330 132, 348 132, 358 136"/>
+              <path d="M 318 142 C 330 140, 348 140, 360 144"/>
+            </g>
+
+            <!-- Brainstem -->
+            <path d="M 310 138 C 316 152, 318 166, 316 182 C 328 180, 332 164, 330 148 C 328 140, 320 136, 312 134 Z"
+                  fill="#E4DCCB" stroke="#D0C6B2" stroke-width="1.2"/>
+
+            <!-- Eye -->
+            <circle cx="262" cy="100" r="8" fill="#E4DCCB" stroke="#D0C6B2" stroke-width="1.2"/>
+
+            <!-- Balance organ of the inner ear -->
+            <circle cx="292" cy="140" r="8" fill="none" stroke="#D0C6B2" stroke-width="1.2"/>
+            <circle cx="298" cy="146" r="5" fill="none" stroke="#D0C6B2" stroke-width="1.2"/>
+
+            <!-- ---------- Body in profile ---------- -->
+            <path d="M 282 172
+                     C 278 184, 266 192, 250 200
+                     C 234 210, 226 226, 226 248
+                     C 226 284, 232 322, 236 358
+                     C 240 392, 242 412, 242 428
+                     L 342 428
+                     C 344 406, 346 380, 350 350
+                     C 356 310, 360 270, 356 240
+                     C 352 216, 342 202, 326 194
+                     C 312 188, 304 182, 302 172 Z"
+                  fill="#EFE9DD" stroke="#DCD3C2" stroke-width="1.5"/>
+
+            <!-- Leg -->
+            <path d="M 248 428
+                     C 252 502, 260 562, 270 604
+                     C 278 644, 284 682, 286 712
+                     L 316 712
+                     C 318 672, 320 620, 324 570
+                     C 330 512, 336 468, 338 428 Z"
+                  fill="#EFE9DD" stroke="#DCD3C2" stroke-width="1.5"/>
+
+            <!-- Foot -->
+            <path d="M 284 712 L 316 712 L 318 736 L 232 736 C 224 736, 222 726, 232 722 L 282 716 Z"
+                  fill="#EFE9DD" stroke="#DCD3C2" stroke-width="1.4"/>
+
+            <!-- Joint markers: hip, knee, ankle -->
+            <g fill="none" stroke="#D0C6B2" stroke-width="1.2">
+              <circle cx="300" cy="438" r="11"/>
+              <circle cx="296" cy="588" r="11"/>
+              <circle cx="300" cy="706" r="9"/>
+            </g>
+
+            <!-- ---------- The network ---------- -->
+
+            <!-- In from the eye -->
+            <path class="route route-branch" d="M 270 102 C 292 108, 314 122, 330 134"/>
+
+            <!-- In from the balance organ -->
+            <path class="route route-branch" d="M 300 142 C 312 142, 322 141, 330 140"/>
+
+            <!-- Cerebellum down through the brainstem -->
+            <path class="route route-trunk" d="M 342 148 C 336 164, 330 178, 328 192"/>
+
+            <!-- The length of the spinal cord -->
+            <path class="route route-trunk"
+                  d="M 328 192 C 334 244, 340 302, 342 360
+                     C 344 396, 342 414, 340 430"/>
+
+            <!-- Down the leg to the ankle -->
+            <path class="route route-trunk"
+                  d="M 340 430 C 338 484, 332 542, 326 594
+                     C 320 642, 314 682, 310 704"/>
+
+            <!-- Out to the muscles that hold you upright -->
+            <path class="route route-branch" d="M 340 306 C 320 314, 296 324, 270 334"/>
+            <path class="route route-branch" d="M 340 434 C 322 440, 300 446, 276 452"/>
+            <path class="route route-branch" d="M 311 700 C 300 704, 290 708, 278 712"/>
+
+            <!-- In from the joints of the leg -->
+            <path class="route route-branch" d="M 300 449 C 314 446, 328 440, 338 436"/>
+            <path class="route route-branch" d="M 296 599 C 308 598, 318 596, 328 592"/>
+
+            <!-- Direction marks: this is a loop, not a one-way route -->
+            <g class="flow-mark" fill="none" stroke="#C8963C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M 330 258 L 336 250 L 342 258"/>
+              <path d="M 334 350 L 340 358 L 346 350"/>
+              <path d="M 320 620 L 326 612 L 332 620"/>
+            </g>
+
+            <circle class="terminus" cx="338" cy="140" r="4.5" fill="#C8963C"/>
+            <circle class="terminus" cx="262" cy="100" r="3.2" fill="#C8963C"/>
+            <circle class="terminus" cx="270" cy="334" r="3.2" fill="#C8963C"/>
+            <circle class="terminus" cx="276" cy="452" r="3.2" fill="#C8963C"/>
+            <circle class="terminus" cx="278" cy="712" r="3.2" fill="#C8963C"/>
+
+            <!-- Callout around the balance organ -->
+            <circle cx="294" cy="142" r="18" fill="none" stroke="#D0C6B2" stroke-width="1" stroke-dasharray="3 5"/>
+            <g stroke="#D0C6B2" stroke-width="1" fill="none">
+              <line x1="309" y1="131" x2="470" y2="258"/>
+              <line x1="306" y1="157" x2="470" y2="400"/>
+            </g>
+
+            <!-- ---------- Enlargement: the balance organ ---------- -->
+            <text class="diagram-note" x="566" y="244" text-anchor="middle">The balance organ, enlarged</text>
+
+            <g fill="none" stroke="#DCD3C2" stroke-width="9" stroke-linecap="round">
+              <ellipse cx="556" cy="310" rx="42" ry="24" transform="rotate(-24 556 310)"/>
+              <ellipse cx="562" cy="316" rx="40" ry="22" transform="rotate(46 562 316)"/>
+              <ellipse cx="552" cy="320" rx="36" ry="20" transform="rotate(96 552 320)"/>
+            </g>
+
+            <!-- Vestibule, where the loops meet -->
+            <circle cx="556" cy="356" r="15" fill="#E4DCCB" stroke="#D0C6B2" stroke-width="1.3"/>
+
+            <!-- The nerve carrying position signals to the cerebellum -->
+            <path class="route route-branch" d="M 556 371 C 556 386, 556 400, 556 412"/>
+            <circle class="terminus" cx="556" cy="412" r="3.2" fill="#C8963C"/>
+
+            <text class="diagram-label" x="556" y="438" text-anchor="middle">Balance nerve</text>
+            <text class="diagram-label" x="556" y="456" text-anchor="middle">to the cerebellum</text>
+
+            <!-- ---------- Leader lines ---------- -->
+            <g stroke="#D0C6B2" stroke-width="1" fill="none">
+              <line x1="150" y1="100" x2="252" y2="100"/>
+              <line x1="150" y1="182" x2="278" y2="150"/>
+              <line x1="150" y1="334" x2="262" y2="334"/>
+              <line x1="150" y1="452" x2="268" y2="452"/>
+              <line x1="150" y1="712" x2="270" y2="712"/>
+              <line x1="432" y1="140" x2="366" y2="140"/>
+              <line x1="432" y1="196" x2="336" y2="188"/>
+              <line x1="432" y1="580" x2="332" y2="590"/>
+            </g>
+
+            <!-- ---------- Labels ---------- -->
+            <g class="diagram-label">
+              <text x="142" y="96"  text-anchor="end">Eyes</text>
+              <text x="142" y="178" text-anchor="end">Balance organ</text>
+              <text x="142" y="196" text-anchor="end">of the inner ear</text>
+              <text x="142" y="330" text-anchor="end">Muscles of</text>
+              <text x="142" y="348" text-anchor="end">the trunk</text>
+              <text x="142" y="448" text-anchor="end">Muscles of</text>
+              <text x="142" y="466" text-anchor="end">the hip</text>
+              <text x="142" y="708" text-anchor="end">Muscles of</text>
+              <text x="142" y="726" text-anchor="end">the ankle</text>
+              <text x="440" y="136" text-anchor="start">Cerebellum</text>
+              <text x="440" y="200" text-anchor="start">Brainstem</text>
+              <text x="440" y="576" text-anchor="start">Sensors in the hip,</text>
+              <text x="440" y="594" text-anchor="start">knee and ankle</text>
+            </g>
+
+            <!-- ---------- Legend ---------- -->
+            <g transform="translate(196, 812)">
+              <line x1="0" y1="0" x2="34" y2="0" stroke="#C8963C" stroke-width="2.6" stroke-linecap="round"/>
+              <text class="legend-label" x="46" y="4">The balance network</text>
+              <g fill="none" stroke="#C8963C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M 8 21 L 14 13 L 20 21"/>
+                <path d="M 14 32 L 20 40 L 26 32"/>
+              </g>
+              <text class="legend-label" x="46" y="30">A continuous loop: the body reports, the brain corrects</text>
+            </g>
+          </svg>
+          <figcaption>The network this practice follows: signals from the eyes, the inner ear and the joints of the leg converge on the cerebellum, and corrections travel back out to the muscles that hold you upright.</figcaption>
+        </figure>
+        <p class="pathway-note">A simplified schematic rather than an anatomical reference, and a network rather than a single route. Only one side is drawn. Balance is continuous and two-way: the body reports where it is and the brain corrects, many times a second, without your attention.</p>
+      </div>
+  </div>
+
+  <div class="phase-card">
+    <div class="phase-eyebrow">Part IV · Closing</div>
+    <div class="phase-title">Resting in Centre</div>
+    <p><strong>How it works.</strong> You return to your breath and to wherever you actually are — sitting, lying, resting — and take a few long breaths before finishing.</p>
+  </div>
+
+  <div class="practice-console">
+    <div class="console-label">Guided Audio Narration</div>
+    <div class="audio-target">Balance and Posture Practice</div>
+    <div class="audio-duration">Four parts</div>
+    <audio controls preload="metadata"><source src="downloads/audio/audio-balance.mp3" type="audio/mpeg">Your browser doesn't support the audio element. The full script is below.</audio>
+    <p class="console-note">Audio to be recorded. The written script below is equally effective read quietly to yourself.</p>
+  </div>
+
+  <!-- AUDIO DISCLOSURE -->
+  <div class="audio-disclosure">
+    <div class="audio-disclosure-label">A Note on the Audio</div>
+    <p>The audio narration is recorded by me, in my own voice. The words and pacing are mine, and no synthesised or computer-generated voice is used. If listening doesn't suit you, the written script below is equally effective — read it quietly to yourself, or have someone read it to you. Many people find their own inner voice the most effective narrator.</p>
+  </div>
+
+  <h2 class="section-head">The Script</h2>
+  <details style="margin:1.25rem 0 2.5rem;border:1px solid var(--border);padding:1.25rem 1.5rem;background:rgba(200,150,60,0.03);">
+    <summary style="cursor:pointer;font-size:0.85rem;color:var(--gold);letter-spacing:0.06em;text-transform:uppercase;">Read the script</summary>
+    <div style="margin-top:1.75rem;font-size:0.93rem;color:#4A4438;line-height:1.9;">
+      <!-- GENERATED from scripts/balance.json — do not edit by hand; edit the JSON and re-run generate.py -->
+      <p style="font-family:'Lora',serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem;">Part I · Breath and Light</p>
+      <p style="margin-bottom:1rem;">Settle into whatever is supporting you right now. Let the surface take your weight. There is nothing to hold up in this practice. Let it all down.</p>
+      <p style="margin-bottom:1rem;">Take a slow breath in. Let it out slowly. On each out-breath, let a little more of the body&#x27;s held tension release. The shoulders. The jaw. The hands.</p>
+      <p style="margin-bottom:1.75rem;">Bring warmth to the top of your head. Let it descend with each breath. This time, let the warmth travel all the way down to the base of your spine — to the pelvis, the sitting bones, the very foundation of your body. The weight of you is here. The centre is here.</p>
+      <p style="font-family:'Lora',serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem;">Part II · The Ideal Being</p>
+      <p style="margin-bottom:1rem;">In front of you there is a figure, standing. You may see them, or simply sense them there — either is right. They are simply standing: not performing, not bracing. Their weight is even. Their spine is easy and long. There is a soft, relaxed steadiness about them.</p>
+      <p style="margin-bottom:1rem;">Notice what this is like when it is not effortful. The slight, continuous movement of the body — barely there — as it makes small adjustments to stay upright. The trusting of the ankles. The quiet hips. The calm in the shoulders. No gripping. No compensating. Just a body that knows where it is in space.</p>
+      <p style="margin-bottom:1.75rem;">The figure steps into you. Now you are standing — or imagining standing. Either is fine. The ground under your feet. The weight distributing. The length in the spine. The head sitting easily at the top of it all. You are upright. Centred. The balance is happening. It doesn&#x27;t need managing.</p>
+      <p style="font-family:'Lora',serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem;">Part III · The Anatomical Pathway</p>
+      <p style="margin-bottom:1rem;">Bring your awareness to the back of your skull — the base of your brain. Your cerebellum is here. It&#x27;s always working, always receiving signals from your inner ear, your joints, your muscles. It&#x27;s the coordinator of balance. Sense it there — not a sharp picture, just a sense of something quietly, steadily active.</p>
+      <p style="margin-bottom:1rem;">Bring attention to your inner ear. The fluid inside it, reporting the position of your head. The parts that sense gravity. This information is flowing to your cerebellum right now. Let it flow. Don&#x27;t interfere. Just notice it.</p>
+      <p style="margin-bottom:1rem;">Now bring attention to your joints — wherever they are, whatever position they&#x27;re in. Your ankles. Your knees. Your hips. Each one is sending signals upward, reporting its angle, its tension, its load. Your cerebellum takes it all in. Puts it together. Sends correcting signals back out to the muscles that hold you upright — the deep muscles along your spine, the muscles around your hips, the small muscles in your ankles.</p>
+      <p style="margin-bottom:1.75rem;">Now sense yourself upright. Standing. The whole system working the way it was built to. Signal in, signal out, balance kept — not because you&#x27;re gripping or thinking hard, but because the system is running. Let it run.</p>
+      <p style="font-family:'Lora',serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem;">Part IV · Closing</p>
+      <p style="margin-bottom:1rem;">Return to the breath. Return to wherever you are — sitting, lying, resting. You are supported. The practice has been received. The imagery settles.</p>
+      <p style="margin-bottom:1rem;">Carry a fragment of this today: the spine long, the weight dropping through the feet, the balance just happening. In any window of quiet — a slow breath, a pause — return to it.</p>
+      <p style="margin-bottom:1rem;">Your body moves through natural rhythms all day. About every 90 minutes, your mind drifts — when you notice that drift, return for a breath or two to the feeling of standing, centred, easy. At night, as you drift toward sleep, the practice is especially potent. A few breaths of that easy balance as you fall asleep carries the work into your dreams. The same is true when you first wake.</p>
+      <p style="margin-bottom:1rem;">Three long breaths now. The room around you. Enough.</p>
+      <p style="margin-bottom:0;">This practice sits alongside your physiotherapy — it doesn&#x27;t replace it. It&#x27;s a rehearsal, offered to your body as it is today.</p>
+    </div>
+  </details>
+
+  <h2 class="section-head">When to Practise</h2>
+  <div class="timing-grid">
+    <div class="timing-card">
+      <div class="timing-label">Throughout the day</div>
+      <div class="timing-title">Before transitions</div>
+      <p>Before you stand from sitting, spend one breath imagining the movement — the weight shifting forward, the legs activating, the rise. This preparation imagery may improve motor readiness and reduce hesitation.</p>
+    </div>
+    <div class="timing-card">
+      <div class="timing-label">During rest</div>
+      <div class="timing-title">The 90-minute drift</div>
+      <p>Return briefly to the felt sense of being centred and upright. Two or three breaths of the spine long, the weight even, the balance easy. The image accumulates with repetition.</p>
+    </div>
+    <div class="timing-card">
+      <div class="timing-label">Before sleep</div>
+      <div class="timing-title">The standing image</div>
+      <p>Hold the image of standing — centred, easy, unguarded — as you fall asleep. The cerebellum integrates motor information during sleep. This practice seeds that consolidation.</p>
+    </div>
+    <div class="timing-card">
+      <div class="timing-label">On waking</div>
+      <div class="timing-title">Before you first stand</div>
+      <p>The minutes right after waking are a natural pause before the day's first standing and walking. Before you get up, spend a few breaths on the image of standing centred and easy. It's a moment already built into your morning, which makes it easy to remember.</p>
+    </div>
+  </div>
+
+  <div class="academic-note">
+    <div class="academic-note-label">An Honest Note</div>
+    <p>The evidence for mental practice specifically helping balance after stroke is positive, but there's less research on it than there is for the arm and hand. Studies have found improvements in balance measures when imagery is added to balance training. The specific cerebellum-focused imagery used in this practice is a reasoned approach, not a tested method.</p>
+    <p>If you're working with a physiotherapist on balance and preventing falls, tell them about this practice. Balance rehab is an area where combining physical and mental practice works especially well when you and your therapist plan it together.</p>
+  </div>
+
+  <div class="exercise-nav">
+    <a href="exercise-walking.html" class="ex-nav-link">← Practice 02: Walking</a>
+    <a href="guided-imagery.html" style="font-size:0.8rem;color:var(--gold);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;">All Practices</a>
+    <a href="exercise-speech.html" class="ex-nav-link">Practice 04: Speech →</a>
+  </div>
+</div>
+
+<footer>
+  <a href="index.html" class="footer-brand">Living Beyond Stroke</a>
+  <div class="footer-copy">© 2025 Living Beyond Stroke</div>
+</footer>
+
+</body>
+</html>
