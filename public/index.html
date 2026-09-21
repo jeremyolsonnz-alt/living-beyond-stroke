@@ -72,8 +72,6 @@
   .pillar-num { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
   .pillar-title { font-family: 'Lora', serif; font-size: 1.1rem; color: var(--cream); font-weight: 400; margin-bottom: 0.4rem; }
   .pillar-sub { font-size: 0.82rem; color: #7A7060; line-height: 1.5; }
-  .pillar-video-link { margin-top: 0.75rem; font-size: 0.78rem; letter-spacing: 0.03em; color: var(--gold); }
-  .pillar-card:hover .pillar-video-link { color: var(--cream); }
 
   /* FOOTER */
   footer { background: #1A1810; padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; gap: 1rem; }
@@ -129,12 +127,11 @@
       <div class="pillar-title">The Research Foundation</div>
       <div class="pillar-sub">What the science says about mental practice and the brain's ability to reorganise itself after stroke. Plain language, cited throughout.</div>
     </a>
-    <div class="pillar-card" onclick="if(!event.target.closest('a')){window.location.href='guided-imagery.html';}">
+    <a href="guided-imagery.html" class="pillar-card">
       <div class="pillar-num">Pillar 02 · Mind-Body Practice</div>
       <div class="pillar-title">Guided Imagery Programme</div>
       <div class="pillar-sub">Five guided practices targeting arm and hand, walking, balance, speech, and fatigue. Four-part method. Free to use.</div>
-      <a href="guided-imagery.html#video-overview" class="pillar-video-link" style="text-decoration:none;display:inline-block;" onclick="event.stopPropagation()">▶ Watch a short video overview</a>
-    </div>
+    </a>
   </div>
 </section>
 
