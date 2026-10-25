@@ -131,7 +131,10 @@
   .footer-copy{font-size:0.75rem;color:#3A3020;}
 
   @media(max-width:900px){nav{padding:0 1.25rem;}.nav-links{display:none;}.hamburger{display:flex;}.timing-grid{grid-template-columns:1fr;}.article-body{padding:2.5rem 1.5rem 4rem;}.hero-inner{padding:0 1.5rem;}}
+  /* Draw each pathway when it scrolls into view (added 2026-10-26) */
+  .js-draw svg:not(.drawn) *{animation-play-state:paused !important;}
 </style>
+<script>if('IntersectionObserver' in window)document.documentElement.classList.add('js-draw');</script>
 </head>
 <body>
 
@@ -229,29 +232,31 @@
                   fill="#E4DCCB" stroke="#D0C6B2" stroke-width="1.2"/>
 
             <!-- ---------- Torso with one arm at the side ---------- -->
-            <path d="M 306 158
-                     C 306 170, 294 176, 274 184
-                     C 250 192, 232 202, 226 218
-                     C 220 236, 226 266, 232 298
-                     C 238 334, 240 378, 240 428
+            <path d="M 312 158
+                     L 312 214
+                     C 312 228, 298 236, 278 244
+                     C 252 254, 234 268, 230 286
+                     C 228 300, 230 306, 232 316
+                     C 238 350, 240 390, 240 428
                      L 240 486
                      L 420 486
-                     C 420 430, 424 384, 430 344
-                     C 436 306, 442 274, 440 250
-                     L 452 298
-                     C 460 338, 466 370, 470 402
+                     C 420 430, 424 390, 430 352
+                     C 434 330, 438 314, 440 304
+                     L 452 322
+                     C 460 348, 466 374, 470 402
                      L 470 450
                      L 508 450
                      L 508 398
-                     C 506 364, 498 318, 486 274
-                     C 476 236, 464 208, 446 196
-                     C 428 184, 406 176, 386 168
-                     C 370 164, 356 160, 356 158
+                     C 506 364, 500 330, 490 300
+                     C 482 278, 470 264, 452 256
+                     C 428 246, 400 238, 378 230
+                     C 362 224, 348 220, 348 214
+                     L 348 158
                      Z"
                   fill="#EFE9DD" stroke="#DCD3C2" stroke-width="1.5"/>
 
             <!-- Spinal cord below the neck: not part of this route -->
-            <line x1="332" y1="292" x2="332" y2="450"
+            <line x1="336" y1="296" x2="336" y2="450"
                   stroke="#C9C0AE" stroke-width="2" stroke-dasharray="3 6" stroke-linecap="round"/>
 
             <!-- ---------- The pathway ---------- -->
@@ -260,20 +265,20 @@
             <path class="route route-trunk" d="M 296 76 C 302 100, 310 124, 316 144"/>
 
             <!-- Crossing the midline, low in the brainstem -->
-            <path class="route route-trunk" d="M 316 144 C 322 162, 332 174, 342 184 C 346 192, 346 202, 345 212"/>
+            <path class="route route-trunk" d="M 316 144 C 322 162, 332 174, 338 184 C 340 192, 338 202, 336 210"/>
 
             <!-- The neck segments of the spinal cord -->
-            <path class="route route-segment" d="M 345 216 L 343 286"/>
+            <path class="route route-segment" d="M 336 212 L 336 282"/>
 
             <!-- Out through the nerve bundle at the shoulder -->
-            <path class="route route-branch" d="M 344 226 C 368 230, 390 236, 404 244"/>
-            <path class="route route-branch" d="M 344 252 C 370 252, 392 254, 406 258"/>
-            <path class="route route-branch" d="M 343 276 C 368 272, 390 266, 404 262"/>
+            <path class="route route-branch" d="M 336 234 C 372 246, 396 262, 412 276"/>
+            <path class="route route-branch" d="M 336 256 C 372 264, 396 274, 414 282"/>
+            <path class="route route-branch" d="M 336 278 C 370 280, 394 284, 412 288"/>
 
             <!-- Down the arm to the wrist -->
             <path class="route route-trunk"
-                  d="M 406 254 C 430 270, 446 298, 458 334
-                     C 468 364, 476 396, 480 424"/>
+                  d="M 412 282 C 434 294, 448 314, 460 344
+                     C 470 370, 476 398, 480 424"/>
 
             <circle class="terminus" cx="296" cy="76" r="4.5" fill="#C8963C"/>
             <circle class="terminus" cx="480" cy="424" r="3.4" fill="#C8963C"/>
@@ -473,5 +478,30 @@
 </footer>
 
 
+<script>
+/* Pathway diagrams (added 2026-10-26):
+   1. widen each diagram just enough that no label is cut off at the edges;
+   2. draw the gold pathway when the diagram scrolls into view. */
+(function(){
+  var svgs=[].slice.call(document.querySelectorAll('svg[viewBox]'));
+  function fit(s){
+    var o=(s.dataset.vb||(s.dataset.vb=s.getAttribute('viewBox'))).split(/[ ,]+/).map(Number);
+    s.setAttribute('viewBox',o.join(' '));
+    try{var b=s.getBBox();}catch(e){return;}
+    if(!b.width)return;
+    var x0=Math.min(o[0],b.x-6),x1=Math.max(o[0]+o[2],b.x+b.width+6);
+    s.setAttribute('viewBox',[x0,o[1],x1-x0,o[3]].join(' '));
+  }
+  function fitAll(){svgs.forEach(fit);}
+  fitAll();
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitAll);
+  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(fitAll,150);});
+  if(!document.documentElement.classList.contains('js-draw'))return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('drawn');io.unobserve(e.target);}});
+  },{threshold:0.25});
+  document.querySelectorAll('svg').forEach(function(s){io.observe(s);});
+})();
+</script>
 </body>
 </html>

@@ -122,7 +122,10 @@
   .footer-brand{font-family:'Lora',serif;font-size:0.9rem;color:#5A5040;text-decoration:none;}
   .footer-copy{font-size:0.75rem;color:#3A3020;}
   @media(max-width:900px){nav{padding:0 1.25rem;}.nav-links{display:none;}.hamburger{display:flex;}.timing-grid{grid-template-columns:1fr;}.article-body{padding:2.5rem 1.5rem 4rem;}.hero-inner{padding:0 1.5rem;}}
+  /* Draw each pathway when it scrolls into view (added 2026-10-26) */
+  .js-draw svg:not(.drawn) *{animation-play-state:paused !important;}
 </style>
+<script>if('IntersectionObserver' in window)document.documentElement.classList.add('js-draw');</script>
 </head>
 <body>
 <nav>
@@ -461,5 +464,30 @@
   // Hamburger menu is handled inline; no additional JS required
 </script>
 
+<script>
+/* Pathway diagrams (added 2026-10-26):
+   1. widen each diagram just enough that no label is cut off at the edges;
+   2. draw the gold pathway when the diagram scrolls into view. */
+(function(){
+  var svgs=[].slice.call(document.querySelectorAll('svg[viewBox]'));
+  function fit(s){
+    var o=(s.dataset.vb||(s.dataset.vb=s.getAttribute('viewBox'))).split(/[ ,]+/).map(Number);
+    s.setAttribute('viewBox',o.join(' '));
+    try{var b=s.getBBox();}catch(e){return;}
+    if(!b.width)return;
+    var x0=Math.min(o[0],b.x-6),x1=Math.max(o[0]+o[2],b.x+b.width+6);
+    s.setAttribute('viewBox',[x0,o[1],x1-x0,o[3]].join(' '));
+  }
+  function fitAll(){svgs.forEach(fit);}
+  fitAll();
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitAll);
+  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(fitAll,150);});
+  if(!document.documentElement.classList.contains('js-draw'))return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('drawn');io.unobserve(e.target);}});
+  },{threshold:0.25});
+  document.querySelectorAll('svg').forEach(function(s){io.observe(s);});
+})();
+</script>
 </body>
 </html>
